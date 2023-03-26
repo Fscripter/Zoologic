@@ -10,6 +10,7 @@ public class mainWindow {
         createWindow();
         this.createMenu();
         window.setVisible(true);
+        menu.changePanel(this);
     }
     private void createMenu(){
         menu = new Dashboard();
@@ -22,5 +23,9 @@ public class mainWindow {
         window.setLocationRelativeTo(null);
         window.setLayout(null);
         window.setTitle("Zoologic");
+    }
+    public void addElement(JPanel component){
+        window.add(component);
+        window.repaint();
     }
 }
