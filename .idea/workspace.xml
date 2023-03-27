@@ -6,13 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5337f04b-346c-438f-9b85-03745d9abd1d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Panel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/AnimalsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/AnimalsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Dashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/EmployeesPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/EmployeesPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/TicketPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/TicketPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/UsersPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/UsersPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/mainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/mainWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
