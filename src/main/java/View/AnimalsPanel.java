@@ -3,6 +3,7 @@ package View;
 import Model.Panel;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
 public class AnimalsPanel extends Panel {
@@ -36,19 +37,29 @@ public class AnimalsPanel extends Panel {
         addButton.setIcon(addIcon);
         addButton.setBorder(null);
         addButton.setBackground(null);
-        addButton.setBounds(700,350,100,50);
+        addButton.setBounds(350,400,100,50);
 
         this.getPanel().add(addButton);
     }
     private void addTableInfo(){
         JLabel animalsTableTitle = new JLabel("Animals list");
-        animalsTableTitle.setBounds(15,60,400,32);
+        animalsTableTitle.setBounds(350,60,400,32);
 
-        animalsTable = new JTable();
+        String[] headers = {"name, "age","Specie"};
+        Object[][] data = {
+                {"Ramesh Raman", 5000,0},
+                {"Shabbir Hussein", 7000,0}
+        };
+        animalsTable = new JTable(data,headers);
         animalsTable.setBounds(15,90,755,300);
         animalsTable.setBorder(BorderFactory.createLineBorder(Color.black,1));
+        animalsTable.setFillsViewportHeight(true);
 
-        this.getPanel().add(animalsTable);
+        JScrollPane scrollPane = new JScrollPane(animalsTable);
+        scrollPane.setBounds(15,90,755,300);
+        animalsTable.setFillsViewportHeight(true);
+
+        this.getPanel().add(scrollPane);
         this.getPanel().add(animalsTableTitle);
     }
 
