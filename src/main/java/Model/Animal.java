@@ -1,6 +1,6 @@
 package org.example.Model;
 
-import org.json.simple.JSONObject;
+//import org.json.simple.JSONObject;
 
 public class Animal {
     private int age;
@@ -13,7 +13,7 @@ public class Animal {
     private int foodFrequencyPerDay;
     private String allergies;
     private String feeding;
-    private JSONObject animalJSON = new JSONObject();
+    //private JSONObject animalJSON = new JSONObject();
 
     public Animal(int age, int size, String name, String species, boolean dangerous, String psychological,
             String acquisitionMethod, int foodFrequencyPerDay, String allergies, String feeding) {
@@ -29,10 +29,10 @@ public class Animal {
         this.feeding = feeding;
     }
 
-    public Animal(JSONObject animal) {
-        this.animalJSON = animal;
-
-    }
+//    public Animal(JSONObject animal) {
+//        this.animalJSON = animal;
+//
+//    }
 
     public Object[] getArray() {
         Object[] arraylinear = {
@@ -42,20 +42,20 @@ public class Animal {
         return arraylinear;
     }
 
-    public JSONObject getJSON() {
-        this.animalJSON.put("age", this.age);
-        this.animalJSON.put("name", this.name);
-        this.animalJSON.put("size", this.size);
-        this.animalJSON.put("species", this.species);
-        this.animalJSON.put("dangerous", this.dangerous);
-        this.animalJSON.put("psychological", this.psychological);
-        this.animalJSON.put("acquisitionMethod", this.acquisitionMethod);
-        this.animalJSON.put("foodFrequencyPerDays", this.foodFrequencyPerDay);
-        this.animalJSON.put("allergies", this.allergies);
-        this.animalJSON.put("feeding", this.feeding);
-        System.out.println(this.animalJSON);
-        return this.animalJSON;
-    }
+//    public JSONObject getJSON() {
+//        this.animalJSON.put("age", this.age);
+//        this.animalJSON.put("name", this.name);
+//        this.animalJSON.put("size", this.size);
+//        this.animalJSON.put("species", this.species);
+//        this.animalJSON.put("dangerous", this.dangerous);
+//        this.animalJSON.put("psychological", this.psychological);
+//        this.animalJSON.put("acquisitionMethod", this.acquisitionMethod);
+//        this.animalJSON.put("foodFrequencyPerDays", this.foodFrequencyPerDay);
+//        this.animalJSON.put("allergies", this.allergies);
+//        this.animalJSON.put("feeding", this.feeding);
+//        System.out.println(this.animalJSON);
+//        return this.animalJSON;
+//    }
 
     public int getAge() {
         return age;

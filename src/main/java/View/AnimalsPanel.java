@@ -45,7 +45,7 @@ public class AnimalsPanel extends Panel {
         JLabel animalsTableTitle = new JLabel("Animals list");
         animalsTableTitle.setBounds(350,60,400,32);
 
-        String[] headers = {"name, "age","Specie"};
+        String[] headers = {"name", "age","Specie"};
         Object[][] data = {
                 {"Ramesh Raman", 5000,0},
                 {"Shabbir Hussein", 7000,0}

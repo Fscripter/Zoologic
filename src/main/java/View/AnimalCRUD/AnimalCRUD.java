@@ -2,14 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package org.example.View;
+package View.AnimalCRUD;
 
 import java.awt.event.KeyEvent;
 
 import javax.swing.JTextField;
 
 import org.example.Control.GestionAnimal;
-import org.json.simple.JSONObject;
+//import org.json.simple.JSONObject;
 
 /**
  *
@@ -416,7 +416,7 @@ public class AnimalCRUD extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AnimalCRUD().setVisible(true);
+                new AnimalCRUD(new GestionAnimal()).setVisible(true);
             }
         });
     }
