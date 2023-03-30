@@ -9,11 +9,7 @@ public class Tour {
     private String description;
     private ArrayList<Animal> animalList;
 
-    public Tour(float price, String name, String description, ArrayList<Animal> animalList) {
-        this.price = price;
-        this.name = name;
-        this.description = description;
-        this.animalList = animalList;
+    public Tour() {
     }
 
     public float getPrice() {
