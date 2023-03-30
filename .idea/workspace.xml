@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5337f04b-346c-438f-9b85-03745d9abd1d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Tour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Tour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Dashboard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/TourPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/TourPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,11 +23,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -51,6 +48,9 @@
         <option name="workspaceImportEnabled" value="true" />
       </MavenImportingSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2NMn3DLr0Aold6H1YqLVJlvTFLR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -129,7 +129,10 @@
       <updated>1679482617755</updated>
       <workItem from="1679962529756" duration="647000" />
       <workItem from="1680125764670" duration="1157000" />
-      <workItem from="1680126930535" duration="9397000" />
+      <workItem from="1680126930535" duration="9716000" />
+      <workItem from="1680142579967" duration="26000" />
+      <workItem from="1680185547168" duration="732000" />
+      <workItem from="1680187553664" duration="1645000" />
     </task>
     <servers />
   </component>
