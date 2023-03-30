@@ -8,7 +8,7 @@ public class TourPanel extends Panel {
     public TourPanel() {
         super("Tours", "src/main/resources/Panel/Icons/001-tourists.png");
         JLabel h1 = new JLabel("Using tabs, you are now in Tours");
-        h1.setBounds(250, -50, 800, 200);
+        h1.setBounds(300, -50, 800, 200);
         this.getPanel().add(h1);
         this.addTourButton();
     }
@@ -23,6 +23,8 @@ public class TourPanel extends Panel {
 
         this.getPanel().add(addButton);
     }
+
+
 
 
 }
