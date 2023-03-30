@@ -10,6 +10,7 @@ public class TourPanel extends Panel {
         JLabel h1 = new JLabel("Using tabs, you are now in Tours");
         h1.setBounds(300, -50, 800, 200);
         this.getPanel().add(h1);
+
         this.addTourButton();
     }
 

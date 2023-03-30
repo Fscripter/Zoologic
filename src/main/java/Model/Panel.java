@@ -5,7 +5,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 
-public class Panel  {
+public class Panel {
     JLabel buttonPanel;
     ImageIcon iconPanel;
     String path;
