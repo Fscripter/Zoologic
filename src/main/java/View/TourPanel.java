@@ -1,10 +1,13 @@
 package View;
 
 import Model.Panel;
-
+import View.GridPanel;
 import javax.swing.*;
+import javax.swing.border.Border;
+import java.awt.*;
 
 public class TourPanel extends Panel {
+
     public TourPanel() {
         super("Tours", "src/main/resources/Panel/Icons/001-tourists.png");
         JLabel h1 = new JLabel("Using tabs, you are now in Tours");
@@ -12,6 +15,7 @@ public class TourPanel extends Panel {
         this.getPanel().add(h1);
 
         this.addTourButton();
+        //this.createGrid();
     }
 
     private void addTourButton() {
@@ -25,7 +29,12 @@ public class TourPanel extends Panel {
         this.getPanel().add(addButton);
     }
 
-
-
-
+//    private JPanel createGrid() {
+//        GridPanel grid = new GridPanel();
+//        JPanel panel = grid.createGrid(0, 3, 5, 5);
+//        panel.setBounds(100, 100, 600, 300);
+//        panel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+//
+//        return panel;
+//    }
 }
