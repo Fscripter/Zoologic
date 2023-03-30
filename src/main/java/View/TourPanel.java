@@ -5,6 +5,8 @@ import View.GridPanel;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class TourPanel extends Panel {
 
@@ -25,6 +27,14 @@ public class TourPanel extends Panel {
         addButton.setBorder(null);
         addButton.setBackground(null);
         addButton.setBounds(350, 400, 100,50);
+
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                AddTourWindow tourCreator = new AddTourWindow();
+                System.out.println(e);
+            }
+        });
 
         this.getPanel().add(addButton);
     }
