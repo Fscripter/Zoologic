@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5337f04b-346c-438f-9b85-03745d9abd1d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Tour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Tour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Tour.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +23,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="fa761523-aa8f-4880-922b-d03e8b8aa692" />
+        <option name="url" value="https://github.com/Fscripter/Zoologic.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -109,7 +124,7 @@
       <updated>1679482617755</updated>
       <workItem from="1679962529756" duration="647000" />
       <workItem from="1680125764670" duration="1157000" />
-      <workItem from="1680126930535" duration="3480000" />
+      <workItem from="1680126930535" duration="5267000" />
     </task>
     <servers />
   </component>
