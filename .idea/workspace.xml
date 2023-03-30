@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5337f04b-346c-438f-9b85-03745d9abd1d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Animal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/Tour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Tour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Dashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/TourPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/TourPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +38,9 @@
         <option name="url" value="https://github.com/Fscripter/Zoologic.git" />
       </UrlAndAccount>
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/View/Dashboard.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -123,7 +129,7 @@
       <updated>1679482617755</updated>
       <workItem from="1679962529756" duration="647000" />
       <workItem from="1680125764670" duration="1157000" />
-      <workItem from="1680126930535" duration="6507000" />
+      <workItem from="1680126930535" duration="9397000" />
     </task>
     <servers />
   </component>

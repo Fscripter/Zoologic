@@ -35,7 +35,7 @@ public class Dashboard implements MouseListener {
         options.add(new AnimalsPanel());
         options.add(new EmployeesPanel());
         options.add(new TicketPanel());
-        options.add(new UsersPanel());
+        options.add(new TourPanel());
         this.createButtons();
     }
     private void createButtons(){

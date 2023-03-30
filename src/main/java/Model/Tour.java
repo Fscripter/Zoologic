@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.ArrayList;
+import org.example.Model.Animal;
 
 public class Tour {
 
