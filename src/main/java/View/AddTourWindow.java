@@ -18,16 +18,29 @@ public class AddTourWindow {
 
     private void createWindow() {
         window = new JFrame();
-        panel = new JPanel();
 
-        window.setBackground(Color.DARK_GRAY);
+        panel = new JPanel();
+        panel.setLayout(null);
+        window.add(panel);
+        this.addButton(panel);
+        panel.setBackground(Color.DARK_GRAY);
+
         window.setSize(700, 500);
         window.setLocationRelativeTo(null);
         window.setTitle("Tour Creator");
     }
 
-    private void addButton() {
-        JButton but = new JButton();
+    private void addButton(JPanel panel) {
+        JButton button = new JButton("Add Tour");
+        button.setBorder(null);
+        button.setFocusPainted(false);
+        button.setForeground(Color.WHITE);
+        button.setBackground(null);
+        ImageIcon addIcon = new ImageIcon("src/main/resources/AnimalsPanel/CRUD/add.png");
+        button.setIcon(addIcon);
+        button.setBorderPainted(false);
+        panel.add(button);
+        button.setBounds(300, 400, 140, 40);
     }
 
     public void addElement(JPanel component){

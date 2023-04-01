@@ -134,12 +134,24 @@
       <workItem from="1680142579967" duration="26000" />
       <workItem from="1680185547168" duration="732000" />
       <workItem from="1680187553664" duration="9978000" />
-      <workItem from="1680209703630" duration="5268000" />
+      <workItem from="1680209703630" duration="5297000" />
+      <workItem from="1680312431254" duration="2794000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

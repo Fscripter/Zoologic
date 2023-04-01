@@ -21,7 +21,7 @@ public class TourPanel extends Panel {
     }
 
     private void addTourButton() {
-        JButton addButton = new JButton("Add tour");
+        JButton addButton = new JButton("Tour Creator");
         ImageIcon addIcon = new ImageIcon("src/main/resources/AnimalsPanel/CRUD/add.png");
         addButton.setIcon(addIcon);
         addButton.setBorder(null);
