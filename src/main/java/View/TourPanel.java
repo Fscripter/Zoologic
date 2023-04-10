@@ -32,7 +32,6 @@ public class TourPanel extends Panel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 AddTourWindow tourCreator = new AddTourWindow();
-                System.out.println(e);
             }
         });
 

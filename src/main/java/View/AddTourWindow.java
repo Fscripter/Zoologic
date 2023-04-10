@@ -27,62 +27,67 @@ public class AddTourWindow {
         this.addButton(panel);
         panel.setBackground(Color.DARK_GRAY);
 
-        this.addLabel("First label", 20, 20, 100, 30, panel);
+        this.addLabel(panel);
 
-        this.addTextField(20, 50, 200, 30, panel);
+        this.addTextField(panel);
 
         window.setSize(700, 500);
         window.setLocationRelativeTo(null);
         window.setTitle("Tour Creator");
     }
 
-    private void createButtons() {
-
-    }
-
-    private void createLabels() {
-
-    }
-
-    private void createTextFields() {
-
-    }
-
-    private void addButton(JPanel panel) {
-        JButton button = new JButton("Add Tour");
+    private JButton createButtons(String buttonText, int x, int y, int width, int height, String iconFilename) {
+        JButton button = new JButton(buttonText);
         button.setBorder(null);
         button.setFocusPainted(false);
         button.setForeground(Color.WHITE);
         button.setBackground(null);
-        ImageIcon addIcon = new ImageIcon("src/main/resources/AnimalsPanel/CRUD/add.png");
+        ImageIcon addIcon = new ImageIcon(iconFilename);
         button.setIcon(addIcon);
         button.setBorderPainted(false);
-        panel.add(button);
-        button.setBounds(300, 400, 140, 40);
+        button.setBounds(x, y, width, height);
 
-        button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
+        return button;
     }
 
-    private void addLabel(String text, int x, int y, int w, int h, JPanel panel) {
+    private JLabel createLabels(String text, int x, int y, int w, int h) {
         JLabel label = new JLabel(text);
         label.setName(text);
         label.setBounds(x, y, w, h);
         label.setForeground(Color.white);
 
-        panel.add(label);
+        return label;
     }
 
-
-    private void addTextField(int x, int y, int w, int h, JPanel panel) {
+    private JTextField createTextFields(int x, int y, int w, int h) {
         JTextField textField = new JTextField();
         textField.setBounds(x, y, w, h);
-        panel.add(textField);
+
+        return textField;
     }
+
+    private void addButton(JPanel panel) {
+        JButton button1 = createButtons("Add Tour", 300, 400, 140, 40, "src/main/resources/AnimalsPanel/CRUD/add.png");
+        panel.add(button1);
+        button1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+    }
+
+    private void addLabel(JPanel panel) {
+        JLabel label1 = createLabels("First label", 20, 20, 100, 30);
+        panel.add(label1);
+    }
+
+    private void addTextField(JPanel panel) {
+        JTextField textField1 = createTextFields(20, 50, 200, 30);
+        panel.add(textField1);
+    }
+
 
 
     public void addElement(JPanel component){
