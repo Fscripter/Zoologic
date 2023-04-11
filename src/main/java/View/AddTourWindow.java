@@ -24,18 +24,33 @@ public class AddTourWindow {
         panel = new JPanel();
         panel.setLayout(null);
         window.add(panel);
-        this.addButton(panel);
         panel.setBackground(Color.DARK_GRAY);
 
-        this.addLabel(panel);
+        addButton(panel);
 
-        this.addTextField(panel);
+        addLabel(panel);
+
+        addTextField(panel);
+
+        addTextArea(panel);
 
         window.setSize(700, 500);
         window.setLocationRelativeTo(null);
         window.setTitle("Tour Creator");
     }
 
+
+    private JTextArea createTextArea(int rows, int columns, int x, int y, int w, int h) {
+        JTextArea textArea = new JTextArea(rows, columns);
+        textArea.setBounds(x, y, w, h);
+        textArea.setLineWrap(true);
+        textArea.setMargin(new Insets(2, 2, 2, 2));
+
+
+
+
+        return textArea;
+    }
     private JButton createButtons(String buttonText, int x, int y, int width, int height, String iconFilename) {
         JButton button = new JButton(buttonText);
         button.setBorder(null);
@@ -49,7 +64,6 @@ public class AddTourWindow {
 
         return button;
     }
-
     private JLabel createLabels(String text, int x, int y, int w, int h) {
         JLabel label = new JLabel(text);
         label.setName(text);
@@ -79,16 +93,29 @@ public class AddTourWindow {
     }
 
     private void addLabel(JPanel panel) {
-        JLabel label1 = createLabels("First label", 20, 20, 100, 30);
+        JLabel label1 = createLabels("Inser Tour name", 20, 20, 100, 30);
         panel.add(label1);
+
+        JLabel label2 = createLabels("Insert Tour Price (#,## format)", 20, 120, 100, 30);
+        panel.add(label2);
+
+        JLabel label3 = createLabels("Write a brief description of the tour", 20, 220, 200, 30);
+        panel.add(label3);
     }
 
     private void addTextField(JPanel panel) {
         JTextField textField1 = createTextFields(20, 50, 200, 30);
         panel.add(textField1);
+
+        JTextField textField2 = createTextFields(20, 150, 200, 30);
+        panel.add(textField2);
     }
 
+    private void addTextArea(JPanel panel) {
+        JTextArea textArea1 = createTextArea(20, 10, 20, 250, 200, 100);
+        panel.add(textArea1);
 
+    }
 
     public void addElement(JPanel component){
         window.add(component);
