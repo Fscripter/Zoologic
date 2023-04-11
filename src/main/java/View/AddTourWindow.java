@@ -14,14 +14,14 @@ public class AddTourWindow {
     private JPanel panel;
 
     public AddTourWindow() {
-        this.createWindow();
+        window = new JFrame();
+        panel = new JPanel();
+        this.createWindow(window, panel);
         window.setVisible(true);
     }
 
-    private void createWindow() {
-        window = new JFrame();
+    private void createWindow(JFrame window, JPanel panel) {
 
-        panel = new JPanel();
         panel.setLayout(null);
         window.add(panel);
         panel.setBackground(Color.DARK_GRAY);
@@ -34,13 +34,15 @@ public class AddTourWindow {
 
         addTextArea(panel);
 
+        addCheckBox(panel);
+
+
         window.setSize(700, 500);
         window.setLocationRelativeTo(null);
         window.setTitle("Tour Creator");
     }
 
-
-
+    //component creating methods
     private JTextArea createTextArea(int rows, int columns, int x, int y, int w, int h) {
         JTextArea textArea = new JTextArea(rows, columns);
         textArea.setBounds(x, y, w, h);
@@ -80,6 +82,16 @@ public class AddTourWindow {
         return textField;
     }
 
+    private JCheckBoxMenuItem createCheckBoxItems(String text, int x, int y, int w, int h) {
+        JCheckBoxMenuItem checkbox = new JCheckBoxMenuItem(text);
+        checkbox.setBounds(x, y, w, h);
+        checkbox.setForeground(Color.white);
+        checkbox.setBackground(Color.gray);
+
+        return checkbox;
+    }
+
+    //component adding methods
     private void addButton(JPanel panel) {
         JButton button1 = createButtons("Add Tour", 300, 400, 140, 40, "src/main/resources/AnimalsPanel/CRUD/add.png");
         panel.add(button1);
@@ -94,10 +106,10 @@ public class AddTourWindow {
 
     private void addLabel(JPanel panel) {
 
-        JLabel label1 = createLabels("Inser Tour name", 20, 20, 100, 30);
+        JLabel label1 = createLabels("Insert Tour name", 20, 20, 100, 30);
         panel.add(label1);
 
-        JLabel label2 = createLabels("Insert Tour Price (#,## format)", 20, 120, 100, 30);
+        JLabel label2 = createLabels("Insert Tour Price (0,00 format)", 20, 120, 200, 30);
         panel.add(label2);
 
         JLabel label3 = createLabels("Write a brief description of the tour", 20, 220, 200, 30);
@@ -118,6 +130,31 @@ public class AddTourWindow {
         JTextArea textArea1 = createTextArea(20, 10, 20, 250, 200, 100);
         panel.add(textArea1);
 
+    }
+
+    private void addCheckBox(JPanel panel) {
+        JPanel innerPanel = new JPanel(null);
+        innerPanel.setBounds(330, 80, 200, 300);
+        innerPanel.setBackground(Color.gray);
+
+        JLabel label1 = createLabels("Select the animals that", 30, 20, 150, 30);
+        JLabel label2 = createLabels("will be in the tour", 50, 30, 100, 50);
+        innerPanel.add(label1);
+        innerPanel.add(label2);
+
+        JCheckBoxMenuItem checkBoxMenuItem1 = createCheckBoxItems("Wild Animals", 10, 75, 150, 30);
+        innerPanel.add(checkBoxMenuItem1);
+
+        JCheckBoxMenuItem checkBoxMenuItem2 = createCheckBoxItems("Animal Type 2", 10, 105, 150, 30);
+        innerPanel.add(checkBoxMenuItem2);
+
+        JCheckBoxMenuItem checkBoxMenuItem3 = createCheckBoxItems("Animal Type 3", 10, 135, 150, 30);
+        innerPanel.add(checkBoxMenuItem3);
+
+
+
+
+        panel.add(innerPanel);
     }
 
     public void addElement(JPanel component){
