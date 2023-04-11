@@ -40,6 +40,7 @@ public class AddTourWindow {
     }
 
 
+
     private JTextArea createTextArea(int rows, int columns, int x, int y, int w, int h) {
         JTextArea textArea = new JTextArea(rows, columns);
         textArea.setBounds(x, y, w, h);
@@ -51,6 +52,7 @@ public class AddTourWindow {
 
         return textArea;
     }
+
     private JButton createButtons(String buttonText, int x, int y, int width, int height, String iconFilename) {
         JButton button = new JButton(buttonText);
         button.setBorder(null);
@@ -64,6 +66,7 @@ public class AddTourWindow {
 
         return button;
     }
+
     private JLabel createLabels(String text, int x, int y, int w, int h) {
         JLabel label = new JLabel(text);
         label.setName(text);
@@ -93,6 +96,7 @@ public class AddTourWindow {
     }
 
     private void addLabel(JPanel panel) {
+
         JLabel label1 = createLabels("Inser Tour name", 20, 20, 100, 30);
         panel.add(label1);
 
@@ -101,11 +105,13 @@ public class AddTourWindow {
 
         JLabel label3 = createLabels("Write a brief description of the tour", 20, 220, 200, 30);
         panel.add(label3);
+
     }
 
     private void addTextField(JPanel panel) {
         JTextField textField1 = createTextFields(20, 50, 200, 30);
         panel.add(textField1);
+
 
         JTextField textField2 = createTextFields(20, 150, 200, 30);
         panel.add(textField2);
@@ -116,6 +122,8 @@ public class AddTourWindow {
         panel.add(textArea1);
 
     }
+
+
 
     public void addElement(JPanel component){
         window.add(component);
