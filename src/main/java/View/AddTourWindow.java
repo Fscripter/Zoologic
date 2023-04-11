@@ -47,9 +47,6 @@ public class AddTourWindow {
         textArea.setLineWrap(true);
         textArea.setMargin(new Insets(2, 2, 2, 2));
 
-
-
-
         return textArea;
     }
 
@@ -122,8 +119,6 @@ public class AddTourWindow {
         panel.add(textArea1);
 
     }
-
-
 
     public void addElement(JPanel component){
         window.add(component);
