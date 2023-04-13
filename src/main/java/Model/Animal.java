@@ -1,4 +1,4 @@
-package org.example.Model;
+package Model;
 
 //import org.json.simple.JSONObject;
 

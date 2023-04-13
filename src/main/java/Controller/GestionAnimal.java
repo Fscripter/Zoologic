@@ -10,7 +10,7 @@ import java.util.List;
 import javax.annotation.processing.SupportedOptions;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import org.example.Model.Animal;
+import Model.Animal;
 //import org.json.simple.JSONArray;
 //import org.json.simple.JSONObject;
 //import org.json.simple.parser.JSONParser;

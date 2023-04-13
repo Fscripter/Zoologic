@@ -9,8 +9,15 @@ import java.awt.event.ActionListener;
 
 public class AddTourWindow {
 
-    private JFrame window;
+    private JTextField tourName;
+    private JTextField tourPrice;
+    private JTextArea tourDescription;
 
+    private JCheckBoxMenuItem wildAnimals;
+    private JCheckBoxMenuItem animalType2;
+    private JCheckBoxMenuItem animalType3;
+
+    private JFrame window;
     private JPanel panel;
 
     public AddTourWindow() {
@@ -98,6 +105,13 @@ public class AddTourWindow {
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                System.out.println(tourName.getText());
+                System.out.println(tourPrice.getText());
+                System.out.println(tourDescription.getText());
+
+                System.out.println(wildAnimals.isSelected() ? wildAnimals.getText() : "");
+                System.out.println(animalType2.isSelected() ? animalType2.getText() : "");
+                System.out.println(animalType3.isSelected() ? animalType3.getText() : "");
 
             }
         });
@@ -118,17 +132,16 @@ public class AddTourWindow {
     }
 
     private void addTextField(JPanel panel) {
-        JTextField textField1 = createTextFields(20, 50, 200, 30);
-        panel.add(textField1);
+        tourName = createTextFields(20, 50, 200, 30);
+        panel.add(tourName);
 
-
-        JTextField textField2 = createTextFields(20, 150, 200, 30);
-        panel.add(textField2);
+        tourPrice = createTextFields(20, 150, 200, 30);
+        panel.add(tourPrice);
     }
 
     private void addTextArea(JPanel panel) {
-        JTextArea textArea1 = createTextArea(20, 10, 20, 250, 200, 100);
-        panel.add(textArea1);
+        tourDescription = createTextArea(20, 10, 20, 250, 200, 100);
+        panel.add(tourDescription);
 
     }
 
@@ -142,17 +155,14 @@ public class AddTourWindow {
         innerPanel.add(label1);
         innerPanel.add(label2);
 
-        JCheckBoxMenuItem checkBoxMenuItem1 = createCheckBoxItems("Wild Animals", 10, 75, 150, 30);
-        innerPanel.add(checkBoxMenuItem1);
+        wildAnimals = createCheckBoxItems("Wild Animals", 10, 75, 150, 30);
+        innerPanel.add(wildAnimals);
 
-        JCheckBoxMenuItem checkBoxMenuItem2 = createCheckBoxItems("Animal Type 2", 10, 105, 150, 30);
-        innerPanel.add(checkBoxMenuItem2);
+        animalType2 = createCheckBoxItems("Animal Type 2", 10, 105, 150, 30);
+        innerPanel.add(animalType2);
 
-        JCheckBoxMenuItem checkBoxMenuItem3 = createCheckBoxItems("Animal Type 3", 10, 135, 150, 30);
-        innerPanel.add(checkBoxMenuItem3);
-
-
-
+        animalType3 = createCheckBoxItems("Animal Type 3", 10, 135, 150, 30);
+        innerPanel.add(animalType3);
 
         panel.add(innerPanel);
     }
