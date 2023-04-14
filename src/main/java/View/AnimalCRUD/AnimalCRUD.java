@@ -8,7 +8,7 @@ import java.awt.event.KeyEvent;
 
 import javax.swing.JTextField;
 
-import org.example.Control.GestionAnimal;
+import Controller.GestionAnimal;
 //import org.json.simple.JSONObject;
 
 /**
