@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5337f04b-346c-438f-9b85-03745d9abd1d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GestionAnimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GestionAnimal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GestionTour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GestionTour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/AnimalCRUD/AnimalCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/AnimalCRUD/AnimalCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/AddTourWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/AddTourWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +143,7 @@
       <workItem from="1681167355002" duration="6734000" />
       <workItem from="1681345945153" duration="233000" />
       <workItem from="1681423138868" duration="269000" />
-      <workItem from="1681425312219" duration="4197000" />
+      <workItem from="1681425312219" duration="7192000" />
     </task>
     <servers />
   </component>

@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class AddTourWindow {
 
@@ -16,6 +17,8 @@ public class AddTourWindow {
     private JCheckBoxMenuItem wildAnimals;
     private JCheckBoxMenuItem animalType2;
     private JCheckBoxMenuItem animalType3;
+    private ArrayList<JCheckBoxMenuItem> animalCheckBoxes = new ArrayList<>();
+
 
     private JFrame window;
     private JPanel panel;
@@ -105,15 +108,113 @@ public class AddTourWindow {
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println(tourName.getText());
-                System.out.println(tourPrice.getText());
-                System.out.println(tourDescription.getText());
 
-                System.out.println(wildAnimals.isSelected() ? wildAnimals.getText() : "");
-                System.out.println(animalType2.isSelected() ? animalType2.getText() : "");
-                System.out.println(animalType3.isSelected() ? animalType3.getText() : "");
+
+                //This Try Catch will try to get a float number for the price, if it can't
+                // it will create a window of alert for the user to fix it
+                try {
+                    float price = Float.parseFloat(tourPrice.getText());
+                } catch (NumberFormatException exception) {
+                    JFrame alertWindow = new JFrame();
+                    JPanel alertPanel = new JPanel(null);
+
+                    alertWindow.setSize(300, 200);
+                    alertWindow.add(alertPanel);
+
+                    JLabel alertLabel = new JLabel("The Tour Price given is invalid");
+                    alertLabel.setBounds(40, 50, 250, 30);
+
+                    alertPanel.add(alertLabel);
+
+                    alertWindow.setVisible(true);
+                    alertWindow.setLocationRelativeTo(null);
+                }
+                // -----------------------------------------------------------------------------------------------------
+
+                // This if Statement alerts the user when the Tour Name given is an empty
+                // String so that the user corrects it before being able to create the tour
+                if (tourName.getText().equals("")) {
+                    JFrame alertWindow = new JFrame();
+                    JPanel alertPanel = new JPanel(null);
+
+                    alertWindow.setSize(300, 200);
+                    alertWindow.add(alertPanel);
+
+                    JLabel alertLabel = new JLabel("Please give the Tour a name");
+                    alertLabel.setBounds(40, 50, 250, 30);
+
+                    alertPanel.add(alertLabel);
+
+                    alertWindow.setVisible(true);
+                    alertWindow.setLocationRelativeTo(null);
+                } else {
+                    System.out.println("Tour Name: " + tourName.getText());
+                }
+                // -----------------------------------------------------------------------------------------------------
+
+                // This if statement works similar to the one from the tourName
+                if (tourDescription.getText().equals("")) {
+                    JFrame alertWindow = new JFrame();
+                    JPanel alertPanel = new JPanel(null);
+
+                    alertWindow.setSize(400, 200);
+                    alertWindow.add(alertPanel);
+
+                    JLabel alertLabel = new JLabel("A short description won't hurt, go on and write it c:");
+                    alertLabel.setBounds(40, 50, 300, 30);
+
+                    alertPanel.add(alertLabel);
+
+                    alertWindow.setVisible(true);
+                    alertWindow.setLocationRelativeTo(null);
+                } else {
+                    System.out.println("Tour Description: " + tourDescription.getText());
+                }
+                // -----------------------------------------------------------------------------------------------------
+
+                // This piece of code first checks if at least one of the checkboxes has been selected, if not it will
+                // throw an alert to the user. If one is selected it searches for each one of the checkboxes so that it
+                // knows what was selected in order to create a new Tour
+                boolean animalTypeSelected = false;
+
+                for (JCheckBoxMenuItem checkBox : animalCheckBoxes) {
+                    if (checkBox.isSelected()){
+                        animalTypeSelected = true;
+                        break;
+                    }
+                }
+
+                if (animalTypeSelected) {
+                    if (wildAnimals.isSelected()) {
+                        System.out.println("{Array improvisado de wild animals}");
+                    }
+
+                    if (animalType2.isSelected()) {
+                        System.out.println("{Array improvisado de animal type 2}");
+                    }
+
+                    if (animalType3.isSelected()) {
+                        System.out.println("{Array improvisado de animal type 3}");
+                    }
+                } else {
+                    JFrame alertWindow = new JFrame();
+                    JPanel alertPanel = new JPanel(null);
+
+                    alertWindow.setSize(400, 200);
+                    alertWindow.add(alertPanel);
+
+                    JLabel alertLabel = new JLabel("Please choose at least one animal type for your tour");
+                    alertLabel.setBounds(40, 50, 300, 30);
+
+                    alertPanel.add(alertLabel);
+
+                    alertWindow.setVisible(true);
+                    alertWindow.setLocationRelativeTo(null);
+                }
+                // -----------------------------------------------------------------------------------------------------
 
             }
+
         });
 
     }
@@ -123,7 +224,7 @@ public class AddTourWindow {
         JLabel label1 = createLabels("Insert Tour name", 20, 20, 100, 30);
         panel.add(label1);
 
-        JLabel label2 = createLabels("Insert Tour Price (0,00 format)", 20, 120, 200, 30);
+        JLabel label2 = createLabels("Insert Tour Price (0.00 format)", 20, 120, 200, 30);
         panel.add(label2);
 
         JLabel label3 = createLabels("Write a brief description of the tour", 20, 220, 200, 30);
@@ -157,12 +258,15 @@ public class AddTourWindow {
 
         wildAnimals = createCheckBoxItems("Wild Animals", 10, 75, 150, 30);
         innerPanel.add(wildAnimals);
+        animalCheckBoxes.add(wildAnimals);
 
         animalType2 = createCheckBoxItems("Animal Type 2", 10, 105, 150, 30);
         innerPanel.add(animalType2);
+        animalCheckBoxes.add(animalType2);
 
         animalType3 = createCheckBoxItems("Animal Type 3", 10, 135, 150, 30);
         innerPanel.add(animalType3);
+        animalCheckBoxes.add(animalType3);
 
         panel.add(innerPanel);
     }
