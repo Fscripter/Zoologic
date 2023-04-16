@@ -7,7 +7,7 @@ import View.mainWindow;
 import Controller.GestionAnimal2;
 
 public class Main {
-    static mainWindow window;
+    public static mainWindow window;
     public static void main(String[] args) {
         Animal2 simba = GestionAnimal2.createAnimal("Simba", 190, 6, "Lion", "Bought", "Wild");
 
@@ -17,8 +17,9 @@ public class Main {
 
         Animal2 oliver = GestionAnimal2.createAnimal("Oliver", 3, 2, "Cat", "Adopted", "Domestic");
 
-        Tour tour1 = GestionTour.createTour("Domestic Tour", (float)5.99, "Domestic tour for people who like peace", GestionAnimal2.readDomesticAnimals());
+        Tour tour1 = GestionTour.createTour("Domestic Tour", 5.99f, "Domestic tour for people who like peace", GestionAnimal2.readDomesticAnimals());
 
         window = new mainWindow();
+
     }
 }

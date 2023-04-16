@@ -4,6 +4,7 @@ import Controller.GestionAnimal2;
 import Controller.GestionTour;
 import Model.Animal2;
 import Model.Tour;
+import org.example.Main;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,6 +13,8 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class AddTourWindow {
+
+    mainWindow refreshWindow;
 
     private JTextField tourName;
     private JTextField tourPrice;
@@ -25,12 +28,15 @@ public class AddTourWindow {
 
     private JFrame window;
     private JPanel panel;
+    private JPanel outerPanel;
 
-    public AddTourWindow() {
+
+    public AddTourWindow(JPanel outerPanel) {
         window = new JFrame();
         panel = new JPanel();
         this.createWindow(window, panel);
         window.setVisible(true);
+        this.outerPanel = outerPanel;
     }
 
     private void createWindow(JFrame window, JPanel panel) {
@@ -254,6 +260,9 @@ public class AddTourWindow {
                     System.out.println(GestionTour.readTourAnimalList(tourCreated));
                     System.out.println("Tour Created bro");
                     System.out.println(GestionTour.getTourArrayList());
+                    Main.window.window.setVisible(false);
+                    window.setVisible(false);
+                    refreshWindow = new mainWindow();
                 } else {
                     System.out.println("Tour not created :c");
                 }

@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class mainWindow {
-    JFrame window;
+    public JFrame window;
     Dashboard menu;
     public mainWindow(){
         createWindow();
