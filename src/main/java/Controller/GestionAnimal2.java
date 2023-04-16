@@ -7,11 +7,11 @@ import java.util.ArrayList;
 
 public class GestionAnimal2 {
 
-    ArrayList<Animal2> animalArrayList;
+    private static ArrayList<Animal2> animalArrayList = new ArrayList<>();
 
 
     // Create Method ----------------------------------------------------------------------------
-    public void createAnimal(String name, float weight, int age, String species, String acquisitionMethod, String animalDivision) {
+    public static Animal2 createAnimal(String name, float weight, int age, String species, String acquisitionMethod, String animalDivision) {
         Animal2 animal = new Animal2();
         animal.setName(name);
         animal.setWeight(weight);
@@ -21,85 +21,98 @@ public class GestionAnimal2 {
         animal.setAnimalDivision(animalDivision);
 
         animalArrayList.add(animal);
+        return animal;
     }
 
     // Update methods ---------------------------------------------------------------------------
 
-    public void updateAnimalName(Animal2 animal, String name) {
+    public static void updateAnimalName(Animal2 animal, String name) {
         int index = animalArrayList.indexOf(animal);
 
         animalArrayList.get(index).setName(name);
     }
 
-    public void updateWeight(Animal2 animal, float weight) {
+    public static void updateWeight(Animal2 animal, float weight) {
         int index = animalArrayList.indexOf(animal);
 
         animalArrayList.get(index).setWeight(weight);
     }
 
-    public void updateAge(Animal2 animal, int age) {
+    public static void updateAge(Animal2 animal, int age) {
         int index = animalArrayList.indexOf(animal);
 
         animalArrayList.get(index).setAge(age);
     }
 
-    public void updateSpecies(Animal2 animal, String species) {
+    public static void updateSpecies(Animal2 animal, String species) {
         int index = animalArrayList.indexOf(animal);
 
         animalArrayList.get(index).setSpecies(species);
     }
 
-    public void updateAcquisitionMethod(Animal2 animal, String acquisitionMethod) {
+    public static void updateAcquisitionMethod(Animal2 animal, String acquisitionMethod) {
         int index = animalArrayList.indexOf(animal);
 
         animalArrayList.get(index).setAcquisitionMethod(acquisitionMethod);
     }
 
-    public void updateAnimalDivision(Animal2 animal, String animalDivision) {
+    public static void updateAnimalDivision(Animal2 animal, String animalDivision) {
         int index = animalArrayList.indexOf(animal);
 
         animalArrayList.get(index).setAnimalDivision(animalDivision);
     }
 
+    public static ArrayList<Animal2> readWildAnimals() {
+        ArrayList<Animal2> wildAnimals = new ArrayList<>();
+
+        for(int i = 0; i < animalArrayList.size(); i++) {
+            if(animalArrayList.get(i).getAnimalDivision().equals("Wild")) {
+                wildAnimals.add(animalArrayList.get(i));
+                System.out.println(animalArrayList.get(i).getName());
+            }
+        }
+
+        return wildAnimals;
+    }
     // Read Methods -----------------------------------------------------------------------------
-    public String readAnimalName(Animal2 animal, String name) {
+    public static String readAnimalName(Animal2 animal) {
         int index = animalArrayList.indexOf(animal);
 
         return animalArrayList.get(index).getName();
     }
 
-    public float readWeight(Animal2 animal, float weight) {
+    public static float readWeight(Animal2 animal) {
         int index = animalArrayList.indexOf(animal);
 
         return animalArrayList.get(index).getWeight();
     }
 
-    public int readAge(Animal2 animal, int age) {
+    public static int readAge(Animal2 animal) {
         int index = animalArrayList.indexOf(animal);
 
         return animalArrayList.get(index).getAge();
     }
 
-    public String readSpecies(Animal2 animal, String species) {
+    public static String readSpecies(Animal2 animal) {
         int index = animalArrayList.indexOf(animal);
 
         return animalArrayList.get(index).getSpecies();
     }
 
-    public String readAcquisitionMethod(Animal2 animal, String acquisitionMethod) {
+    public static String readAcquisitionMethod(Animal2 animal) {
         int index = animalArrayList.indexOf(animal);
 
         return animalArrayList.get(index).getAcquisitionMethod();
     }
 
-    public String readAnimalDivision(Animal2 animal, String animalDivision) {
+    public static String readAnimalDivision(Animal2 animal) {
         int index = animalArrayList.indexOf(animal);
 
         return animalArrayList.get(index).getAnimalDivision();
     }
 
     // Delete Method ----------------------------------------------------------------------------
-    public void deleteTour(Animal2 tour) {
+    public static void deleteTour(Animal2 tour) {
         int index = animalArrayList.indexOf(tour);
         animalArrayList.remove(index);
     }

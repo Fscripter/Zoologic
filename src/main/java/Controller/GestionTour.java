@@ -6,7 +6,7 @@ import Model.Tour;
 import java.util.ArrayList;
 
 public class GestionTour {
-    ArrayList<Tour> tourArrayList;
+    ArrayList<Tour> tourArrayList = new ArrayList<>();
 
     //Create Method ----------------------------------------------------------------------------------------
     public void createTour(String tourName, float tourPrice, String tourDescription, ArrayList<Animal> animalList) {
