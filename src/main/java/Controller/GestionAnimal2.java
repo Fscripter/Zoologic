@@ -62,18 +62,6 @@ public class GestionAnimal2 {
         animalArrayList.get(index).setAnimalDivision(animalDivision);
     }
 
-    public static ArrayList<Animal2> readWildAnimals() {
-        ArrayList<Animal2> wildAnimals = new ArrayList<>();
-
-        for(int i = 0; i < animalArrayList.size(); i++) {
-            if(animalArrayList.get(i).getAnimalDivision().equals("Wild")) {
-                wildAnimals.add(animalArrayList.get(i));
-                System.out.println(animalArrayList.get(i).getName());
-            }
-        }
-
-        return wildAnimals;
-    }
     // Read Methods -----------------------------------------------------------------------------
     public static String readAnimalName(Animal2 animal) {
         int index = animalArrayList.indexOf(animal);
@@ -111,6 +99,29 @@ public class GestionAnimal2 {
         return animalArrayList.get(index).getAnimalDivision();
     }
 
+    public static ArrayList<Animal2> readWildAnimals() {
+        ArrayList<Animal2> wildAnimals = new ArrayList<>();
+
+        for(int i = 0; i < animalArrayList.size(); i++) {
+            if(animalArrayList.get(i).getAnimalDivision().equals("Wild")) {
+                wildAnimals.add(animalArrayList.get(i));
+            }
+        }
+
+        return wildAnimals;
+    }
+
+    public static ArrayList<Animal2> readDomesticAnimals() {
+        ArrayList<Animal2> domesticAnimals = new ArrayList<>();
+
+        for(int i = 0; i < animalArrayList.size(); i++) {
+            if(animalArrayList.get(i).getAnimalDivision().equals("Domestic")) {
+                domesticAnimals.add(animalArrayList.get(i));
+            }
+        }
+
+        return domesticAnimals;
+    }
     // Delete Method ----------------------------------------------------------------------------
     public static void deleteTour(Animal2 tour) {
         int index = animalArrayList.indexOf(tour);

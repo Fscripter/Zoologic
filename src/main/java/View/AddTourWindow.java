@@ -1,7 +1,9 @@
 package View;
 
 import Controller.GestionAnimal2;
-import Model.Panel;
+import Controller.GestionTour;
+import Model.Animal2;
+import Model.Tour;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,7 +18,7 @@ public class AddTourWindow {
     private JTextArea tourDescription;
 
     private JCheckBoxMenuItem wildAnimals;
-    private JCheckBoxMenuItem animalType2;
+    private JCheckBoxMenuItem domesticAnimals;
     private JCheckBoxMenuItem animalType3;
     private ArrayList<JCheckBoxMenuItem> animalCheckBoxes = new ArrayList<>();
 
@@ -110,6 +112,11 @@ public class AddTourWindow {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                String name = "";
+                float price = 0;
+                String description = "";
+                ArrayList<Animal2> arrayList = new ArrayList<>();
+
                 // This variable will help check when there are no errors/exceptions
                 // in the creation of the tour, if nothing goes wrong it should have the value
                 // of 4 by the end of all the following filters
@@ -119,7 +126,7 @@ public class AddTourWindow {
                 //This Try Catch will try to get a float number for the price, if it can't do it,
                 // it will create a window of alert for the user to fix it
                 try {
-                    float price = Float.parseFloat(tourPrice.getText());
+                    price = Float.parseFloat(tourPrice.getText());
                     creationPermited++;
 
                 } catch (NumberFormatException exception) {
@@ -162,6 +169,7 @@ public class AddTourWindow {
 
                 } else {
                     System.out.println("Tour Name: " + tourName.getText());
+                    name = tourName.getText();
                     creationPermited++;
 
                 }
@@ -187,6 +195,7 @@ public class AddTourWindow {
 
                 } else {
                     System.out.println("Tour Description: " + tourDescription.getText());
+                    description = tourDescription.getText();
                     creationPermited++;
 
                 }
@@ -209,11 +218,11 @@ public class AddTourWindow {
                     creationPermited++;
 
                     if (wildAnimals.isSelected()) {
-                        System.out.println(GestionAnimal2.readWildAnimals());
+                        arrayList.addAll(GestionAnimal2.readWildAnimals());
                     }
 
-                    if (animalType2.isSelected()) {
-                        System.out.println("{Array improvisado de animal type 2}");
+                    if (domesticAnimals.isSelected()) {
+                        arrayList.addAll(GestionAnimal2.readWildAnimals());
                     }
 
                     if (animalType3.isSelected()) {
@@ -239,7 +248,15 @@ public class AddTourWindow {
                 }
                 // -----------------------------------------------------------------------------------------------------
 
-                System.out.println(creationPermited >= 4 ? "Tour Created bro" : "Not able to create tour");
+                if (creationPermited >= 4) {
+                    Tour tourCreated = GestionTour.createTour(name,price,description,arrayList);
+                    System.out.println(GestionTour.readTourDescription(tourCreated));
+                    System.out.println(GestionTour.readTourAnimalList(tourCreated));
+                    System.out.println("Tour Created bro");
+                    System.out.println(GestionTour.getTourArrayList());
+                } else {
+                    System.out.println("Tour not created :c");
+                }
 
 
             }
@@ -289,9 +306,9 @@ public class AddTourWindow {
         innerPanel.add(wildAnimals);
         animalCheckBoxes.add(wildAnimals);
 
-        animalType2 = createCheckBoxItems("Animal Type 2", 10, 105, 150, 30);
-        innerPanel.add(animalType2);
-        animalCheckBoxes.add(animalType2);
+        domesticAnimals = createCheckBoxItems("Domestic Animals", 10, 105, 150, 30);
+        innerPanel.add(domesticAnimals);
+        animalCheckBoxes.add(domesticAnimals);
 
         animalType3 = createCheckBoxItems("Animal Type 3", 10, 135, 150, 30);
         innerPanel.add(animalType3);

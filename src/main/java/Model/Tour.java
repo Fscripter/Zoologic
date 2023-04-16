@@ -7,7 +7,7 @@ public class Tour {
     private float price;
     private String name;
     private String description;
-    private ArrayList<Animal> animalList;
+    private ArrayList<Animal2> animalList;
 
     public Tour() {
     }
@@ -36,11 +36,11 @@ public class Tour {
         this.description = description;
     }
 
-    public ArrayList<Animal> getAnimalList() {
+    public ArrayList<Animal2> getAnimalList() {
         return animalList;
     }
 
-    public void setAnimalList(ArrayList<Animal> animalList) {
+    public void setAnimalList(ArrayList<Animal2> animalList) {
         this.animalList = animalList;
     }
 }

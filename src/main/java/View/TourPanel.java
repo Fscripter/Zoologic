@@ -3,7 +3,6 @@ package View;
 import Model.Panel;
 import View.GridPanel;
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,6 +16,8 @@ public class TourPanel extends Panel {
         this.getPanel().add(h1);
 
         this.addTourButton();
+
+        this.addTourPanels(this.getPanel());
         //this.createGrid();
     }
 
@@ -46,4 +47,18 @@ public class TourPanel extends Panel {
 //
 //        return panel;
 //    }
+
+    private void addTourPanels(JPanel panel) {
+        int x = 40;
+        int y = 75;
+        for(int i = 0; i < 3; i++) {
+            JPanel tourPanel = new JPanel(null);
+            tourPanel.setBounds(x, y, 200, 300);
+            tourPanel.setBackground(Color.darkGray);
+            x += 250;
+            panel.add(tourPanel);
+        }
+
+    }
+
 }
