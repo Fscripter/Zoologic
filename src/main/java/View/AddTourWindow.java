@@ -28,15 +28,12 @@ public class AddTourWindow {
 
     private JFrame window;
     private JPanel panel;
-    private JPanel outerPanel;
 
-
-    public AddTourWindow(JPanel outerPanel) {
+    public AddTourWindow() {
         window = new JFrame();
         panel = new JPanel();
         this.createWindow(window, panel);
         window.setVisible(true);
-        this.outerPanel = outerPanel;
     }
 
     private void createWindow(JFrame window, JPanel panel) {
@@ -228,7 +225,7 @@ public class AddTourWindow {
                     }
 
                     if (domesticAnimals.isSelected()) {
-                        arrayList.addAll(GestionAnimal2.readWildAnimals());
+                        arrayList.addAll(GestionAnimal2.readDomesticAnimals());
                     }
 
                     if (animalType3.isSelected()) {
@@ -262,7 +259,7 @@ public class AddTourWindow {
                     System.out.println(GestionTour.getTourArrayList());
                     Main.window.window.setVisible(false);
                     window.setVisible(false);
-                    refreshWindow = new mainWindow();
+                    Main.window = new mainWindow();
                 } else {
                     System.out.println("Tour not created :c");
                 }

@@ -1,6 +1,7 @@
 package View;
 
 import Controller.GestionTour;
+import Model.Animal2;
 import Model.Panel;
 import Model.Tour;
 import View.GridPanel;
@@ -32,12 +33,20 @@ public class TourPanel extends Panel {
         addButton.setBackground(null);
         addButton.setBounds(350, 400, 100,50);
 
-        JPanel outerPanel = this.getPanel();
-
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                AddTourWindow tourCreator = new AddTourWindow(outerPanel);
+                if (GestionTour.getTourArrayList().size() != 3) {
+                    AddTourWindow tourCreator = new AddTourWindow();
+                } else {
+                    JFrame alertFrame = new JFrame();
+                    JLabel label = new JLabel("Sorry, tours limit reached.");
+                    alertFrame.add(label);
+                    alertFrame.setBounds(new Rectangle(200, 150));
+                    alertFrame.setLocationRelativeTo(null);
+
+                    alertFrame.setVisible(true);
+                }
             }
         });
 
@@ -63,10 +72,41 @@ public class TourPanel extends Panel {
     private void addToursToPanels(ArrayList<JPanel> panels) {
         ArrayList<Tour> tours = GestionTour.getTourArrayList();
 
+        // Iterate through each tour and add its information to a panel
         for(int i = 0; i < tours.size(); i++) {
-            panels.get(i).add(createTextArea(tours.get(i).getName(), 40, 10, 200, 100, 5.0f));
+
+            // Create a label for the tour's name and add it to the panel
+            panels.get(i).add(createLabels(tours.get(i).getName(), 40, 0, 200, 40, 5.0f));
+
+            // Create a label for the tour's description and add it to the panel
+            JLabel tourDescriptionLabel = createLabels("Tour Description: ", 5, 45, 180, 20, 2f);
+            panels.get(i).add(tourDescriptionLabel);
+
+            // Create a text area for the tour's description and add it to the panel
+            JTextArea tourDescription = createTextArea(tours.get(i).getDescription(), 5, 65, 190, 100, 1.5f);
+            panels.get(i).add(tourDescription);
+
+            // Create a label for the tour's animals and add it to the panel
+            JLabel tourAnimalsLabel = createLabels("Animals: ", 5, 170, 180, 20, 1f);
+            panels.get(i).add(tourAnimalsLabel);
+
+            // Create a string that will contain the names and species of each animal on the tour
+            String animalsText = "";
+            ArrayList<Animal2> animals = tours.get(i).getAnimalList();
+            for (Animal2 animal: animals) {
+                animalsText = animalsText.concat((animal.getName() +" (" + animal.getSpecies() +(animal == animals.get(animals.size() - 1) ? ")." : "), ")));
+                System.out.println(animal.getSpecies());
+            }
+
+            // Create a text area for the tour's animals and add it to the panel
+            JTextArea tourAnimals = createTextArea(animalsText, 5, 190, 190, 50, 0.5f);
+            panels.get(i).add(tourAnimals);
+
+            JLabel priceLabel = createLabels("Price: " + tours.get(i).getPrice() + "$", 5, 240, 190, 30, 1f);
+            panels.get(i).add(priceLabel);
         }
     }
+
 
     private JTextArea createTextArea(String text, int x, int y, int w, int h, float fontSize) {
         JTextArea textArea = new JTextArea(text);
@@ -86,7 +126,6 @@ public class TourPanel extends Panel {
         return textArea;
     }
 
-
     private JLabel createLabels(String text, int x, int y, int w, int h, float fontSize) {
         JLabel label = new JLabel(text);
         label.setName(text);
@@ -97,10 +136,6 @@ public class TourPanel extends Panel {
         label.setFont(font.deriveFont(size));
 
         return label;
-    }
-
-    public void refresh() {
-        addTourPanels(this.getPanel());
     }
 
 }
