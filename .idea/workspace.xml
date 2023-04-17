@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5337f04b-346c-438f-9b85-03745d9abd1d" name="Changes" comment="">
+    <list default="true" id="5337f04b-346c-438f-9b85-03745d9abd1d" name="Changes" comment="Finished the dynamic display of the tours">
+      <change afterPath="$PROJECT_DIR$/src/main/java/View/AnimalsPanel2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/AddTourWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/AddTourWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Dashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/GridPanel.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/TourPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/TourPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -147,8 +149,18 @@
       <workItem from="1681423138868" duration="269000" />
       <workItem from="1681425312219" duration="7306000" />
       <workItem from="1681596874646" duration="13092000" />
-      <workItem from="1681671146157" duration="5293000" />
+      <workItem from="1681671146157" duration="5367000" />
+      <workItem from="1681682016745" duration="1963000" />
+      <workItem from="1681685423401" duration="63000" />
     </task>
+    <task id="LOCAL-00001" summary="Finished the dynamic display of the tours">
+      <created>1681678416808</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681678416808</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,6 +224,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Finished the dynamic display of the tours" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished the dynamic display of the tours" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

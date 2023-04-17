@@ -4,7 +4,8 @@ import Controller.GestionTour;
 import Model.Animal2;
 import Model.Panel;
 import Model.Tour;
-import View.GridPanel;
+import org.example.Main;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,9 +16,13 @@ public class TourPanel extends Panel {
 
     public TourPanel() {
         super("Tours", "src/main/resources/Panel/Icons/001-tourists.png");
-        JLabel h1 = new JLabel("Using tabs, you are now in Tours");
-        h1.setBounds(300, -50, 800, 200);
+        JLabel h1 = new JLabel("Tours");
+        h1.setBounds(350, -60, 800, 200);
+        Font font = h1.getFont();
+        float size = font.getSize() + 11f;
+        h1.setFont(font.deriveFont(size));
         this.getPanel().add(h1);
+
 
         this.addTourButton();
 
@@ -32,6 +37,8 @@ public class TourPanel extends Panel {
         addButton.setBorder(null);
         addButton.setBackground(null);
         addButton.setBounds(350, 400, 100,50);
+
+
 
         addButton.addActionListener(new ActionListener() {
             @Override
@@ -99,14 +106,17 @@ public class TourPanel extends Panel {
             }
 
             // Create a text area for the tour's animals and add it to the panel
-            JTextArea tourAnimals = createTextArea(animalsText, 5, 190, 190, 50, 0.5f);
+            JTextArea tourAnimals = createTextArea(animalsText, 5, 190, 190, 50, 0.2f);
             panels.get(i).add(tourAnimals);
 
             JLabel priceLabel = createLabels("Price: " + tours.get(i).getPrice() + "$", 5, 240, 190, 30, 1f);
             panels.get(i).add(priceLabel);
+
+            panels.get(i).add(createEditButton(5, 270, 70, 20, tours.get(i)));
+            panels.get(i).add(createDeleteButton(85, 270, 70, 20, tours.get(i)));
+
         }
     }
-
 
     private JTextArea createTextArea(String text, int x, int y, int w, int h, float fontSize) {
         JTextArea textArea = new JTextArea(text);
@@ -136,6 +146,35 @@ public class TourPanel extends Panel {
         label.setFont(font.deriveFont(size));
 
         return label;
+    }
+
+    private JButton createEditButton(int x, int y, int w, int h, Tour tour) {
+        JButton button = new JButton("Edit");
+        button.setBackground(null);
+        button.setFocusPainted(false);
+        button.setBounds(x, y, w, h);
+        button.setForeground(Color.white);
+
+        return button;
+    }
+
+    private JButton createDeleteButton(int x, int y, int w, int h, Tour tour) {
+        JButton button = new JButton("Delete");
+        button.setBackground(null);
+        button.setFocusPainted(false);
+        button.setBounds(x, y, w, h);
+        button.setForeground(Color.white);
+
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GestionTour.deleteTour(tour);
+                Main.window.window.setVisible(false);
+                Main.window = new mainWindow();
+            }
+        });
+
+        return button;
     }
 
 }
