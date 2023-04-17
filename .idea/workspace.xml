@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5337f04b-346c-438f-9b85-03745d9abd1d" name="Changes" comment="Finished the dynamic display of the tours">
-      <change afterPath="$PROJECT_DIR$/src/main/java/View/EditTourWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/AddTourWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/AddTourWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/TourPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/TourPanel.java" afterDir="false" />
-    </list>
+    <list default="true" id="5337f04b-346c-438f-9b85-03745d9abd1d" name="Changes" comment="Finished the dynamic display of the tours" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -151,7 +146,7 @@
       <workItem from="1681671146157" duration="5367000" />
       <workItem from="1681682016745" duration="1963000" />
       <workItem from="1681685423401" duration="63000" />
-      <workItem from="1681697221052" duration="976000" />
+      <workItem from="1681697221052" duration="1181000" />
     </task>
     <task id="LOCAL-00001" summary="Finished the dynamic display of the tours">
       <created>1681678416808</created>
