@@ -155,6 +155,13 @@ public class TourPanel extends Panel {
         button.setBounds(x, y, w, h);
         button.setForeground(Color.white);
 
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new EditTourWindow(tour);
+            }
+        });
+
         return button;
     }
 

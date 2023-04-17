@@ -12,8 +12,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class AddTourWindow {
+public class EditTourWindow {
 
+    private Tour tour;
     private JTextField tourName;
     private JTextField tourPrice;
     private JTextArea tourDescription;
@@ -27,11 +28,16 @@ public class AddTourWindow {
     private JFrame window;
     private JPanel panel;
 
-    public AddTourWindow() {
+    public EditTourWindow(Tour tour) {
         window = new JFrame();
         panel = new JPanel();
         this.createWindow(window, panel);
         window.setVisible(true);
+        this.tour = tour;
+        tourName.setText(tour.getName());
+        tourDescription.setText(tour.getDescription());
+        tourPrice.setText(Float.toString(tour.getPrice()));
+
     }
 
     private void createWindow(JFrame window, JPanel panel) {
@@ -107,7 +113,7 @@ public class AddTourWindow {
 
     //component adding methods
     private void addButton(JPanel panel) {
-        JButton button1 = createButtons("Add Tour", 300, 400, 140, 40, "src/main/resources/AnimalsPanel/CRUD/add.png");
+        JButton button1 = createButtons("Edit Tour", 300, 400, 140, 40, "src/main/resources/AnimalsPanel/CRUD/add.png");
         panel.add(button1);
         button1.addActionListener(new ActionListener() {
             @Override
@@ -250,13 +256,16 @@ public class AddTourWindow {
                 // -----------------------------------------------------------------------------------------------------
 
                 if (creationPermited >= 4) {
-                    Tour tourCreated = GestionTour.createTour(name,price,description,arrayList);
-                    System.out.println("Tour Created bro");
+                    GestionTour.updateTourName(tour, name);
+                    GestionTour.updateTourDescription(tour, description);
+                    GestionTour.updateTourPrice(tour, price);
+                    GestionTour.updateTourAnimalList(tour, arrayList);
+                    System.out.println("Tour Edited bro");
                     Main.window.window.setVisible(false);
                     window.setVisible(false);
                     Main.window = new mainWindow();
                 } else {
-                    System.out.println("Tour not created :c");
+                    System.out.println("Tour not edited :c");
                 }
 
 
