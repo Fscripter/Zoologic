@@ -318,8 +318,4 @@ public class AddTourWindow {
         panel.add(innerPanel);
     }
 
-    public void addElement(JPanel component){
-        window.add(component);
-        window.repaint();
-    }
 }

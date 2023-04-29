@@ -30,36 +30,6 @@ public class TicketPanel2 extends Panel {
         //this.createGrid();
     }
 
-    private void addTourButton() {
-        JButton addButton = new JButton("Tour Creator");
-        ImageIcon addIcon = new ImageIcon("src/main/resources/AnimalsPanel/CRUD/add.png");
-        addButton.setIcon(addIcon);
-        addButton.setBorder(null);
-        addButton.setBackground(null);
-        addButton.setBounds(280, 400, 100,50);
-
-
-
-        addButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (GestionTour.getTourArrayList().size() != 3) {
-                    AddTourWindow tourCreator = new AddTourWindow();
-                } else {
-                    JFrame alertFrame = new JFrame();
-                    JLabel label = new JLabel("Sorry, tours limit reached.");
-                    alertFrame.add(label);
-                    alertFrame.setBounds(new Rectangle(200, 150));
-                    alertFrame.setLocationRelativeTo(null);
-
-                    alertFrame.setVisible(true);
-                }
-            }
-        });
-
-        this.getPanel().add(addButton);
-    }
-
     private void addTourPanels(JPanel panel) {
         int x = 40;
         int y = 75;
@@ -146,42 +116,6 @@ public class TicketPanel2 extends Panel {
         label.setFont(font.deriveFont(size));
 
         return label;
-    }
-
-    private JButton createEditButton(int x, int y, int w, int h, Tour tour) {
-        JButton button = new JButton("Edit");
-        button.setBackground(null);
-        button.setFocusPainted(false);
-        button.setBounds(x, y, w, h);
-        button.setForeground(Color.white);
-
-        button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new EditTourWindow(tour);
-            }
-        });
-
-        return button;
-    }
-
-    private JButton createDeleteButton(int x, int y, int w, int h, Tour tour) {
-        JButton button = new JButton("Delete");
-        button.setBackground(null);
-        button.setFocusPainted(false);
-        button.setBounds(x, y, w, h);
-        button.setForeground(Color.white);
-
-        button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                GestionTour.deleteTour(tour);
-                Main.window.window.setVisible(false);
-                Main.window = new mainWindow();
-            }
-        });
-
-        return button;
     }
 
     private JButton createBuyButton(int x, int y, int w, int h, Tour tour) {
