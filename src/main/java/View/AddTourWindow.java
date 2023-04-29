@@ -20,7 +20,7 @@ public class AddTourWindow {
 
     private JCheckBoxMenuItem wildAnimals;
     private JCheckBoxMenuItem domesticAnimals;
-    private JCheckBoxMenuItem animalType3;
+    private JCheckBoxMenuItem adoptionAnimals;
     private ArrayList<JCheckBoxMenuItem> animalCheckBoxes = new ArrayList<>();
 
 
@@ -226,8 +226,8 @@ public class AddTourWindow {
                         arrayList.addAll(GestionAnimal2.readDomesticAnimals());
                     }
 
-                    if (animalType3.isSelected()) {
-                        System.out.println("{Array improvisado de animal type 3}");
+                    if (adoptionAnimals.isSelected()) {
+                        arrayList.addAll(GestionAnimal2.readAdoptionAnimals());
                     }
                 } else {
                     JFrame alertWindow = new JFrame();
@@ -311,9 +311,9 @@ public class AddTourWindow {
         innerPanel.add(domesticAnimals);
         animalCheckBoxes.add(domesticAnimals);
 
-        animalType3 = createCheckBoxItems("Animal Type 3", 10, 135, 150, 30);
-        innerPanel.add(animalType3);
-        animalCheckBoxes.add(animalType3);
+        adoptionAnimals = createCheckBoxItems("Adoption Animals", 10, 135, 150, 30);
+        innerPanel.add(adoptionAnimals);
+        animalCheckBoxes.add(adoptionAnimals);
 
         panel.add(innerPanel);
     }
