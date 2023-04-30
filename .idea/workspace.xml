@@ -7,7 +7,7 @@
     <list default="true" id="5337f04b-346c-438f-9b85-03745d9abd1d" name="Changes" comment="Finished the dynamic display of the tours">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/AddTourWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/AddTourWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/TicketPanel2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/TicketPanel2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/AnimalsPanel2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/AnimalsPanel2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +153,7 @@
       <workItem from="1681697221052" duration="1181000" />
       <workItem from="1681772722473" duration="2631000" />
       <workItem from="1682790389305" duration="1486000" />
-      <workItem from="1682807781393" duration="3490000" />
+      <workItem from="1682807781393" duration="6203000" />
     </task>
     <task id="LOCAL-00001" summary="Finished the dynamic display of the tours">
       <created>1681678416808</created>

@@ -23,7 +23,6 @@ public class AddTourWindow {
     private JCheckBoxMenuItem adoptionAnimals;
     private ArrayList<JCheckBoxMenuItem> animalCheckBoxes = new ArrayList<>();
 
-
     private JFrame window;
     private JPanel panel;
 
