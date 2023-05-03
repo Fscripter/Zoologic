@@ -16,11 +16,11 @@ public class GestionTour {
         tour.setPrice(tourPrice);
         tour.setDescription(tourDescription);
         tour.setAnimalList(animalList);
+        tour.setToursSold(0);
 
         tourArrayList.add(tour);
         return tour;
     }
-
 
     //Update Methods ---------------------------------------------------------------------------------------
     public static void updateTourName(Tour tour, String tourName) {
@@ -49,6 +49,11 @@ public class GestionTour {
         tourArrayList.get(index).setAnimalList(animalList);
     }
 
+    public static void updateTourSellings(Tour tour, int ticketsSold) {
+        int index = tourArrayList.indexOf(tour);
+
+        tourArrayList.get(index).setToursSold(ticketsSold);
+    }
 
     //Read Methods -----------------------------------------------------------------------------------------
     public static String readTourName(Tour tour) {
@@ -75,12 +80,19 @@ public class GestionTour {
         return tourArrayList.get(index).getAnimalList();
     }
 
+    public static int readTourSellings(Tour tour) {
+        int index = tourArrayList.indexOf(tour);
+
+        return tourArrayList.get(index).getToursSold();
+    }
+
     //Delete Method ---------------------------------------------------------------------------------------
     public static void deleteTour(Tour tour) {
         int index = tourArrayList.indexOf(tour);
         tourArrayList.remove(index);
     }
 
+    // Getter
     public static ArrayList<Tour> getTourArrayList() {
         return tourArrayList;
     }

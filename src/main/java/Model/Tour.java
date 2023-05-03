@@ -7,9 +7,19 @@ public class Tour {
     private float price;
     private String name;
     private String description;
+    private int toursSold;
+
+
     private ArrayList<Animal2> animalList;
 
     public Tour() {
+    }
+
+    public int getToursSold() {
+        return toursSold;
+    }
+    public void setToursSold(int toursSold) {
+        this.toursSold = toursSold;
     }
 
     public float getPrice() {
