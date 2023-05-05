@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5337f04b-346c-438f-9b85-03745d9abd1d" name="Changes" comment="Finished the dynamic display of the tours">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/TicketPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/TicketPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/TourPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/TourPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,6 +153,8 @@
       <workItem from="1682787306822" duration="4886000" />
       <workItem from="1682883921435" duration="12812000" />
       <workItem from="1683129644490" duration="3135000" />
+      <workItem from="1683254723134" duration="2079000" />
+      <workItem from="1683315099100" duration="787000" />
     </task>
     <task id="LOCAL-00001" summary="Finished the dynamic display of the tours">
       <created>1681678416808</created>
