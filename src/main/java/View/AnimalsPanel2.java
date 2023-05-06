@@ -19,9 +19,8 @@ public class AnimalsPanel2 extends Panel {
     private JTextField animalWeight;
     private JTextField animalAge;
     private JTextField animalSpecies;
-
-    private ButtonGroup acquisitionMethodButtonGroup = new ButtonGroup();
-    private ButtonGroup animalDivisionButtonGroup = new ButtonGroup();
+    private ArrayList<JRadioButton> listAcquisitionButtons = new ArrayList<>();
+    private ArrayList<JRadioButton> listAnimalDivision = new ArrayList<>();
 
 
     private JPanel panel = this.getPanel();
@@ -133,16 +132,18 @@ public class AnimalsPanel2 extends Panel {
 
         JRadioButton button1 = createRadioButtons("Bought", 20, 60, 100, 20);
         acquisitionButtons.add(button1);
+        listAcquisitionButtons.add(button1);
         innerPanel.add(button1);
 
         JRadioButton button2 = createRadioButtons("Bornt", 20, 90, 100, 20);
         acquisitionButtons.add(button2);
+        listAcquisitionButtons.add(button2);
         innerPanel.add(button2);
 
         JRadioButton button3 = createRadioButtons("Adopted", 20, 120, 100, 20);
         acquisitionButtons.add(button3);
+        listAcquisitionButtons.add(button3);
         innerPanel.add(button3);
-
 
         panel.add(innerPanel);
     }
@@ -152,28 +153,226 @@ public class AnimalsPanel2 extends Panel {
         JLabel label = createLabels("Animal Division", 20, 20, 150, 30, 4f);
         innerPanel.add(label);
 
-        ButtonGroup acquisitionButtons = new ButtonGroup();
+        ButtonGroup divisionButtons = new ButtonGroup();
 
         JRadioButton button1 = createRadioButtons("Wild Animal", 20, 60, 100, 20);
-        acquisitionButtons.add(button1);
+        divisionButtons.add(button1);
+        listAnimalDivision.add(button1);
         innerPanel.add(button1);
 
         JRadioButton button2 = createRadioButtons("Domestic Animal", 20, 90, 170, 20);
-        acquisitionButtons.add(button2);
+        divisionButtons.add(button2);
+        listAnimalDivision.add(button2);
         innerPanel.add(button2);
 
-        JRadioButton button3 = createRadioButtons("For adoption", 20, 120, 100, 20);
-        acquisitionButtons.add(button3);
+        JRadioButton button3 = createRadioButtons("For Adoption", 20, 120, 100, 20);
+        divisionButtons.add(button3);
+        listAnimalDivision.add(button3);
         innerPanel.add(button3);
 
 
         panel.add(innerPanel);
     }
-
     private void addButton(JPanel panel) {
-        JButton button1 = createButton("Add Animal", 300, 400, 140, 40, "src/main/resources/AnimalsPanel/CRUD/add.png");
+        JButton addAnimalButton = createButton("Add Animal", 300, 400, 140, 40, "src/main/resources/AnimalsPanel/CRUD/add.png");
 
-        panel.add(button1);
+        addAnimalButton.addActionListener(e -> {
+
+            String name = "";
+            float weight = 0f;
+            int age = 0;
+            String species = "";
+            String acquisitionMethod = "";
+            String animalDivision = "";
+
+            // This variable will increase by 1 everytime a test from the inputs is passed.
+            // It will allow the creation of the tour once it has a value of 6
+            int creationPermission = 0;
+
+            // Filter the weight value given to fit in a float format
+            try {
+                weight = Float.parseFloat(animalWeight.getText());
+                creationPermission++;
+            } catch (NumberFormatException exception) {
+                JFrame alertWindow = new JFrame();
+                JPanel alertPanel = new JPanel(null);
+
+                alertWindow.setSize(300, 200);
+                alertWindow.add(alertPanel);
+
+                JLabel alertLabel = new JLabel("The animal weight given is invalid");
+                alertLabel.setBounds(40, 50, 250, 30);
+
+                alertPanel.add(alertLabel);
+
+                alertWindow.setVisible(true);
+                alertWindow.setLocationRelativeTo(null);
+
+                creationPermission = 0;
+            }
+
+            // Filter the age value given so that it's positive and fits in an integer format
+            try {
+                age = Integer.parseInt(animalAge.getText());
+                age = age < 0 ? age * -1 : age;
+                creationPermission++;
+
+            } catch (NumberFormatException exception) {
+                JFrame alertWindow = new JFrame();
+                JPanel alertPanel = new JPanel(null);
+
+                alertWindow.setSize(300, 200);
+                alertWindow.add(alertPanel);
+
+                JLabel alertLabel = new JLabel("The animal age given is invalid");
+                alertLabel.setBounds(40, 50, 250, 30);
+
+                alertPanel.add(alertLabel);
+
+                alertWindow.setVisible(true);
+                alertWindow.setLocationRelativeTo(null);
+
+                creationPermission = 0;
+            }
+
+            // Checks that the name given is not an empty string
+            if (animalName.getText().equals("")) {
+                JFrame alertWindow = new JFrame();
+                JPanel alertPanel = new JPanel(null);
+
+                alertWindow.setSize(300, 200);
+                alertWindow.add(alertPanel);
+
+                JLabel alertLabel = new JLabel("Please give the poor animal a name");
+                alertLabel.setBounds(40, 50, 250, 30);
+
+                alertPanel.add(alertLabel);
+
+                alertWindow.setVisible(true);
+                alertWindow.setLocationRelativeTo(null);
+
+                creationPermission = 0;
+
+            } else {
+                name = animalName.getText();
+                creationPermission++;
+
+            }
+
+            // Checks that the species given is not an empty string either
+            if (animalSpecies.getText().equals("")) {
+                JFrame alertWindow = new JFrame();
+                JPanel alertPanel = new JPanel(null);
+
+                alertWindow.setSize(300, 200);
+                alertWindow.add(alertPanel);
+
+                JLabel alertLabel = new JLabel("Ok, but what kind of animal is this?");
+                alertLabel.setBounds(40, 50, 250, 30);
+
+                alertPanel.add(alertLabel);
+
+                alertWindow.setVisible(true);
+                alertWindow.setLocationRelativeTo(null);
+
+                creationPermission = 0;
+
+            } else {
+                species = animalSpecies.getText();
+                creationPermission++;
+            }
+
+
+
+            // Checks if there is a radio button selected form the acquisition buttons.
+            // If so, it will get the selected button and save its name to use it later.
+            boolean acquisitionSelected = false;
+            JRadioButton selectedSpeciesButton = null;
+            for (JRadioButton button:
+                 listAcquisitionButtons) {
+                if (button.isSelected()) {
+                    acquisitionSelected = true;
+                    selectedSpeciesButton = button;
+                    break;
+                }
+            }
+            if (acquisitionSelected) {
+                acquisitionMethod = selectedSpeciesButton.getText();
+                creationPermission++;
+            } else {
+                JFrame alertWindow = new JFrame();
+                JPanel alertPanel = new JPanel(null);
+
+                alertWindow.setSize(400, 200);
+                alertWindow.add(alertPanel);
+
+                JLabel alertLabel = new JLabel("Please tell us how this animal came to us.");
+                alertLabel.setBounds(40, 50, 300, 30);
+
+                alertPanel.add(alertLabel);
+
+                alertWindow.setVisible(true);
+                alertWindow.setLocationRelativeTo(null);
+
+                creationPermission = 0;
+            }
+
+
+
+            // Searches for the animalDivision radi button selected and assigns its text.
+            boolean divisionSelected = false;
+            JRadioButton selectedDivisionButton = null;
+            for (JRadioButton button:
+                    listAnimalDivision) {
+                if (button.isSelected()) {
+                    divisionSelected = true;
+                    selectedDivisionButton = button;
+                    break;
+                }
+            }
+            if (divisionSelected) {
+                animalDivision = selectedDivisionButton.getText();
+                creationPermission++;
+            } else {
+                JFrame alertWindow = new JFrame();
+                JPanel alertPanel = new JPanel(null);
+
+                alertWindow.setSize(400, 200);
+                alertWindow.add(alertPanel);
+
+                JLabel alertLabel = new JLabel("Please tell us the division of the animal.");
+                alertLabel.setBounds(40, 50, 300, 30);
+
+                alertPanel.add(alertLabel);
+
+                alertWindow.setVisible(true);
+                alertWindow.setLocationRelativeTo(null);
+
+                creationPermission = 0;
+            }
+
+            if (creationPermission == 6) {
+                GestionAnimal2.createAnimal(name, weight, age, species, acquisitionMethod, animalDivision);
+                JFrame alertWindow = new JFrame();
+                JPanel alertPanel = new JPanel(null);
+
+                alertWindow.setSize(400, 200);
+                alertWindow.add(alertPanel);
+
+                JLabel alertLabel = new JLabel("Animal added successfully.");
+                alertLabel.setBounds(40, 50, 300, 30);
+
+                alertPanel.add(alertLabel);
+
+                alertWindow.setVisible(true);
+                //alertWindow.setLocationRelativeTo(null);
+
+                Main.window.window.setVisible(false);
+                Main.window = new mainWindow();
+            }
+        });
+
+        panel.add(addAnimalButton);
     }
 
 }
