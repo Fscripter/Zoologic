@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5337f04b-346c-438f-9b85-03745d9abd1d" name="Changes" comment="Finished the dynamic display of the tours">
+    <list default="true" id="63300cf6-bcaa-40a2-a6d4-cfc1169a7357" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/View/TicketPanel2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GestionAnimal2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GestionAnimal2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GestionTour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GestionTour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Tour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Tour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/AddTourWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/AddTourWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/AnimalsPanel2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/AnimalsPanel2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Dashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/TicketPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/TicketPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +24,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -64,7 +72,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Usuario/Desktop/Zoologic&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/emanu/IdeaProjects/Zoologic&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -141,31 +149,7 @@
       <workItem from="1680906429275" duration="601000" />
       <workItem from="1681068559293" duration="31000" />
       <workItem from="1681167355002" duration="6734000" />
-      <workItem from="1681345945153" duration="233000" />
-      <workItem from="1681423138868" duration="269000" />
-      <workItem from="1681425312219" duration="7306000" />
-      <workItem from="1681596874646" duration="13092000" />
-      <workItem from="1681671146157" duration="5367000" />
-      <workItem from="1681682016745" duration="1963000" />
-      <workItem from="1681685423401" duration="63000" />
-      <workItem from="1681697221052" duration="1181000" />
-      <workItem from="1682560547101" duration="1003000" />
-      <workItem from="1682787306822" duration="4886000" />
-      <workItem from="1682883921435" duration="12812000" />
-      <workItem from="1683129644490" duration="3135000" />
-      <workItem from="1683254723134" duration="2079000" />
-      <workItem from="1683315099100" duration="1162000" />
-      <workItem from="1683316840471" duration="207000" />
-      <workItem from="1683317152810" duration="619000" />
     </task>
-    <task id="LOCAL-00001" summary="Finished the dynamic display of the tours">
-      <created>1681678416808</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1681678416808</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,10 +213,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Finished the dynamic display of the tours" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished the dynamic display of the tours" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

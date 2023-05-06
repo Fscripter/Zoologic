@@ -12,21 +12,25 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-/*public class TicketPanel extends Panel {
+public class TicketPanel2 extends Panel {
 
-    public TicketPanel(){
-        super("Tickets","src/main/resources/Panel/Icons/004-ticket.png");
-        JLabel h1 = new JLabel("Tickets");
-        h1.setBounds(350, -60, 800, 200);
-        this.getPanel().add(h1);
-
+    public TicketPanel2() {
+        super("Tickets", "src/main/resources/Panel/Icons/004-ticket.png");
+        JLabel h1 = new JLabel("Buy Tickets for tours");
+        h1.setBounds(250, -60, 800, 200);
         Font font = h1.getFont();
         float size = font.getSize() + 11f;
         h1.setFont(font.deriveFont(size));
+        this.getPanel().add(h1);
 
-        this.addTicketPanels(this.getPanel());
+
+        //this.addTourButton();
+
+        this.addTourPanels(this.getPanel());
+        //this.createGrid();
     }
-    private void addTicketPanels(JPanel panel) {
+
+    private void addTourPanels(JPanel panel) {
         int x = 40;
         int y = 75;
         ArrayList<JPanel> panels = new ArrayList<>();
@@ -39,11 +43,12 @@ import java.util.ArrayList;
             panels.add(tourPanel);
         }
 
-        addTicketsToPanels(panels);
+        addToursToPanels(panels);
     }
 
-    private void addTicketsToPanels(ArrayList<JPanel> panels) {
+    private void addToursToPanels(ArrayList<JPanel> panels) {
         ArrayList<Tour> tours = GestionTour.getTourArrayList();
+
         // Iterate through each tour and add its information to a panel
         for(int i = 0; i < tours.size(); i++) {
 
@@ -77,9 +82,9 @@ import java.util.ArrayList;
             JLabel priceLabel = createLabels("Price: " + tours.get(i).getPrice() + "$", 5, 240, 190, 30, 1f);
             panels.get(i).add(priceLabel);
 
-            panels.get(i).add(createBuyButton(5, 270, 70, 20, tours.get(i)));
-            //panels.get(i).add(createAmountButton(85, 270, 70, 20, tours.get(i)));
-
+            //panels.get(i).add(createEditButton(5, 270, 70, 20, tours.get(i)));
+            //panels.get(i).add(createDeleteButton(85, 270, 70, 20, tours.get(i)));
+            panels.get(i).add(createBuyButton(50, 270, 100, 20, tours.get(i)));
         }
     }
 
@@ -133,25 +138,6 @@ import java.util.ArrayList;
 
         return button;
     }
-
-    private JButton createAmountButton(int x, int y, int w, int h, Tour tour) {
-        JButton button = new JButton("1");
-        button.setBackground(null);
-        button.setFocusPainted(false);
-        button.setBounds(x, y, w, h);
-        button.setForeground(Color.white);
-
-        button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int amount = getSelectedAmount();
-                button.setText(String.valueOf(amount));
-            }
-        });
-
-        return button;
-    }
-
     private int getSelectedAmount() {
         String[] options = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
         String selectedOption = (String) JOptionPane.showInputDialog(null, "Select an amount", "Amount", JOptionPane.DEFAULT_OPTION, null, options, "1");
@@ -159,5 +145,4 @@ import java.util.ArrayList;
         return amount;
     }
 
-}*/
-
+}

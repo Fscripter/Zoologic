@@ -122,6 +122,19 @@ public class GestionAnimal2 {
 
         return domesticAnimals;
     }
+
+    public static ArrayList<Animal2> readAdoptionAnimals() {
+        ArrayList<Animal2> adoptionAnimals = new ArrayList<>();
+
+        for(int i = 0; i < animalArrayList.size(); i++) {
+            if (animalArrayList.get(i).getAnimalDivision().equals("For Adoption")) {
+                adoptionAnimals.add(animalArrayList.get(i));
+            }
+        }
+
+        return adoptionAnimals;
+    }
+
     // Delete Method ----------------------------------------------------------------------------
     public static void deleteTour(Animal2 tour) {
         int index = animalArrayList.indexOf(tour);
