@@ -129,19 +129,25 @@ public class TicketPanel2 extends Panel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int amount = getSelectedAmount();
-                int result = JOptionPane.showConfirmDialog(null,"Tour: " + tour.getName() + "\nAmount: " + amount + "\nTotal: " + (tour.getPrice()*amount), "Confirmation", JOptionPane.YES_NO_OPTION);
-                if (result == JOptionPane.YES_OPTION) {
-                    // Agrega aquí el código que quieras ejecutar si el usuario selecciona "Yes"
+                if (amount > 0) {
+                    int result = JOptionPane.showConfirmDialog(null,"Tour: " + tour.getName() + "\nAmount: " + amount + "\nTotal: " + (tour.getPrice()*amount), "Confirmation", JOptionPane.YES_NO_OPTION);
+                    if (result == JOptionPane.YES_OPTION) {
+                        // Agrega aquí el código que quieras ejecutar si el usuario selecciona "Yes"
+                    }
                 }
             }
         });
 
         return button;
     }
+
     private int getSelectedAmount() {
         String[] options = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
         String selectedOption = (String) JOptionPane.showInputDialog(null, "Select an amount", "Amount", JOptionPane.DEFAULT_OPTION, null, options, "1");
-        int amount = Integer.parseInt(selectedOption);
+        int amount = -1;
+        if (selectedOption != null) {
+            amount = Integer.parseInt(selectedOption);
+        }
         return amount;
     }
 

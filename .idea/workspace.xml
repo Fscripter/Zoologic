@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63300cf6-bcaa-40a2-a6d4-cfc1169a7357" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/View/TicketPanel2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GestionAnimal2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GestionAnimal2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GestionTour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GestionTour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Tour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Tour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/AddTourWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/AddTourWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/AnimalsPanel2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/AnimalsPanel2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Dashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/TicketPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/TicketPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/TicketPanel2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/TicketPanel2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
