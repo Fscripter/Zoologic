@@ -119,15 +119,17 @@ public class AddTourWindow {
 
                 // This variable will help check when there are no errors/exceptions
                 // in the creation of the tour, if nothing goes wrong it should have the value
-                // of 4 by the end of all the following filters
-                int creationPermited = 0;
+                // of 4 by the end of all the following filters, otherwise it won't allow the
+                // tour creation
+                int creationPermission = 0;
+
                 // -----------------------------------------------------------------------------------------------------
 
                 //This Try Catch will try to get a float number for the price, if it can't do it,
                 // it will create a window of alert for the user to fix it
                 try {
                     price = Float.parseFloat(tourPrice.getText());
-                    creationPermited++;
+                    creationPermission++;
 
                 } catch (NumberFormatException exception) {
                     JFrame alertWindow = new JFrame();
@@ -144,7 +146,7 @@ public class AddTourWindow {
                     alertWindow.setVisible(true);
                     alertWindow.setLocationRelativeTo(null);
 
-                    creationPermited = 0;
+                    creationPermission = 0;
                 }
                 // -----------------------------------------------------------------------------------------------------
 
@@ -165,12 +167,11 @@ public class AddTourWindow {
                     alertWindow.setVisible(true);
                     alertWindow.setLocationRelativeTo(null);
 
-                    creationPermited = 0;
+                    creationPermission = 0;
 
                 } else {
-                    System.out.println("Tour Name: " + tourName.getText());
                     name = tourName.getText();
-                    creationPermited++;
+                    creationPermission++;
 
                 }
                 // -----------------------------------------------------------------------------------------------------
@@ -191,12 +192,12 @@ public class AddTourWindow {
                     alertWindow.setVisible(true);
                     alertWindow.setLocationRelativeTo(null);
 
-                    creationPermited = 0;
+                    creationPermission = 0;
 
                 } else {
                     System.out.println("Tour Description: " + tourDescription.getText());
                     description = tourDescription.getText();
-                    creationPermited++;
+                    creationPermission++;
 
                 }
                 // -----------------------------------------------------------------------------------------------------
@@ -215,7 +216,7 @@ public class AddTourWindow {
 
                 if (animalTypeSelected) {
 
-                    creationPermited++;
+                    creationPermission++;
 
                     if (wildAnimals.isSelected()) {
                         arrayList.addAll(GestionAnimal2.readWildAnimals());
@@ -243,12 +244,12 @@ public class AddTourWindow {
                     alertWindow.setVisible(true);
                     alertWindow.setLocationRelativeTo(null);
 
-                    creationPermited = 0;
+                    creationPermission = 0;
 
                 }
                 // -----------------------------------------------------------------------------------------------------
 
-                if (creationPermited >= 4) {
+                if (creationPermission >= 4) {
                     Tour tourCreated = GestionTour.createTour(name,price,description,arrayList);
                     System.out.println("Tour Created bro");
                     Main.window.window.setVisible(false);
@@ -257,8 +258,6 @@ public class AddTourWindow {
                 } else {
                     System.out.println("Tour not created :c");
                 }
-
-
             }
 
         });
