@@ -11,6 +11,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+//import com.itextpdf.text.*;
 
 public class TicketPanel2 extends Panel {
 
@@ -133,6 +134,23 @@ public class TicketPanel2 extends Panel {
                     int result = JOptionPane.showConfirmDialog(null,"Tour: " + tour.getName() + "\nAmount: " + amount + "\nTotal: " + (tour.getPrice()*amount), "Confirmation", JOptionPane.YES_NO_OPTION);
                     if (result == JOptionPane.YES_OPTION) {
                         // Agrega aquí el código que quieras ejecutar si el usuario selecciona "Yes"
+                        /*try {
+                            // Crea un archivo PDF con el nombre del tour y la cantidad
+                            String fileName = tour.getName() + "_" + amount + ".pdf";
+                            Document document = new Document();
+                            PdfWriter.getInstance(document, new FileOutputStream(fileName));
+                            document.open();
+
+                            // Agrega el contenido del PDF
+                            Paragraph paragraph = new Paragraph("Tour: " + tour.getName() + "\nAmount: " + amount + "\nTotal: " + (tour.getPrice()*amount));
+                            document.add(paragraph);
+
+                            // Cierra el documento
+                            document.close();
+                            System.out.println("PDF creado exitosamente");
+                        } catch (Exception ex) {
+                            System.out.println("Error al crear el PDF: " + ex.getMessage());
+                        }*/
                     }
                 }
             }
