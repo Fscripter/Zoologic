@@ -1,7 +1,6 @@
 package Controller;
 
 import Model.Animal2;
-import Model.Tour;
 
 import java.util.ArrayList;
 
@@ -103,7 +102,7 @@ public class GestionAnimal2 {
         ArrayList<Animal2> wildAnimals = new ArrayList<>();
 
         for(int i = 0; i < animalArrayList.size(); i++) {
-            if(animalArrayList.get(i).getAnimalDivision().equals("Wild")) {
+            if(animalArrayList.get(i).getAnimalDivision().equals("Wild Animal")) {
                 wildAnimals.add(animalArrayList.get(i));
             }
         }
@@ -115,16 +114,35 @@ public class GestionAnimal2 {
         ArrayList<Animal2> domesticAnimals = new ArrayList<>();
 
         for(int i = 0; i < animalArrayList.size(); i++) {
-            if(animalArrayList.get(i).getAnimalDivision().equals("Domestic")) {
+            if(animalArrayList.get(i).getAnimalDivision().equals("Domestic Animal")) {
                 domesticAnimals.add(animalArrayList.get(i));
             }
         }
 
         return domesticAnimals;
     }
+
+    public static ArrayList<Animal2> readAdoptionAnimals() {
+        ArrayList<Animal2> adoptionAnimals = new ArrayList<>();
+
+        for(int i = 0; i < animalArrayList.size(); i++) {
+            if (animalArrayList.get(i).getAnimalDivision().equals("For Adoption")) {
+                adoptionAnimals.add(animalArrayList.get(i));
+            }
+        }
+
+        return adoptionAnimals;
+    }
+
     // Delete Method ----------------------------------------------------------------------------
     public static void deleteTour(Animal2 tour) {
         int index = animalArrayList.indexOf(tour);
         animalArrayList.remove(index);
+    }
+
+    // Getter
+
+    public static ArrayList<Animal2> getAnimalArrayList() {
+        return animalArrayList;
     }
 }
