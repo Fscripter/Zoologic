@@ -11,7 +11,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-//import com.itextpdf.text.*;
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.FileOutputStream;
 
 public class TicketPanel2 extends Panel {
 
@@ -19,7 +21,7 @@ public class TicketPanel2 extends Panel {
         super("Tickets", "src/main/resources/Panel/Icons/004-ticket.png");
         JLabel h1 = new JLabel("Buy Tickets for tours");
         h1.setBounds(250, -60, 800, 200);
-        Font font = h1.getFont();
+        java.awt.Font font = h1.getFont();
         float size = font.getSize() + 11f;
         h1.setFont(font.deriveFont(size));
         this.getPanel().add(h1);
@@ -100,7 +102,7 @@ public class TicketPanel2 extends Panel {
         textArea.setBackground(Color.darkGray);
         textArea.setForeground(Color.white);
 
-        Font font = textArea.getFont();
+        java.awt.Font font = textArea.getFont();
         float size = font.getSize() + fontSize;
         textArea.setFont(font.deriveFont(size));
 
@@ -112,7 +114,7 @@ public class TicketPanel2 extends Panel {
         label.setName(text);
         label.setBounds(x, y, w, h);
         label.setForeground(Color.white);
-        Font font = label.getFont();
+        java.awt.Font font = label.getFont();
         float size = font.getSize() + fontSize;
         label.setFont(font.deriveFont(size));
 
@@ -134,7 +136,7 @@ public class TicketPanel2 extends Panel {
                     int result = JOptionPane.showConfirmDialog(null,"Tour: " + tour.getName() + "\nAmount: " + amount + "\nTotal: " + (tour.getPrice()*amount), "Confirmation", JOptionPane.YES_NO_OPTION);
                     if (result == JOptionPane.YES_OPTION) {
                         // Agrega aquí el código que quieras ejecutar si el usuario selecciona "Yes"
-                        /*try {
+                        try {
                             // Crea un archivo PDF con el nombre del tour y la cantidad
                             String fileName = tour.getName() + "_" + amount + ".pdf";
                             Document document = new Document();
@@ -150,7 +152,7 @@ public class TicketPanel2 extends Panel {
                             System.out.println("PDF creado exitosamente");
                         } catch (Exception ex) {
                             System.out.println("Error al crear el PDF: " + ex.getMessage());
-                        }*/
+                        }
                     }
                 }
             }
