@@ -8,14 +8,23 @@ import org.example.Main;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.io.FileOutputStream;
+import java.io.File;
+import com.itextpdf.text.pdf.PdfPTable;
+
+
+
 
 public class TicketPanel2 extends Panel {
+
+    private PdfWriter writer;
+    private Document document;
 
     public TicketPanel2() {
         super("Tickets", "src/main/resources/Panel/Icons/004-ticket.png");
@@ -27,7 +36,7 @@ public class TicketPanel2 extends Panel {
         this.getPanel().add(h1);
 
 
-        //this.addTourButton();
+        this.addClosePDFButton();
 
         this.addTourPanels(this.getPanel());
         //this.createGrid();
@@ -120,6 +129,60 @@ public class TicketPanel2 extends Panel {
 
         return label;
     }
+    private void createPdf() throws Exception {
+        File file = new File("Tickets.pdf");
+        if (document != null && document.isOpen()) {
+            // El archivo ya está abierto, no es necesario crear uno nuevo
+            return;
+        }
+        if (file.exists() && !file.isDirectory()) {
+            // El archivo ya existe, abrir en modo de escritura normal
+            writer = PdfWriter.getInstance(document, new FileOutputStream(file, true)); // usar modo de apendizaje
+            document.open();
+        } else {
+            // El archivo no existe, crear un nuevo documento
+            document = new Document();
+            writer = PdfWriter.getInstance(document, new FileOutputStream(file));
+            document.open();
+        }
+    }
+    private void closePdf() throws DocumentException {
+        if (document != null && document.isOpen()) {
+            document.close();
+            writer.close(); // cerrar writer
+            System.out.println("PDF cerrado correctamente.");
+        }
+    }
+    private void addClosePDFButton() {
+        JButton addPDFClose = new JButton("Close PDF");
+        addPDFClose.setBorder(null);
+        addPDFClose.setBackground(null);
+        addPDFClose.setBounds(350, 400, 100,50);
+
+        addPDFClose.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    closePdf(); // Llamada al método closePdf()
+                } catch (DocumentException ex) {
+                    System.out.println("Error al cerrar el PDF: " + ex.getMessage());
+                }
+            }
+        });
+
+        this.getPanel().add(addPDFClose);
+    }
+
+
+    private void addTourToPdf(Tour tour, int amount) throws Exception {
+        if (document == null || !document.isOpen()) {
+            // El objeto Document no está creado o no está abierto, crear uno nuevo
+            createPdf();
+        }
+        Paragraph paragraph = new Paragraph("Tour: " + tour.getName() + "\nAmount: " + amount + "\nTotal: " + (tour.getPrice()*amount) + "\n\n");
+        document.add(paragraph);
+        System.out.println("Tour agregado al PDF exitosamente");
+    }
 
     private JButton createBuyButton(int x, int y, int w, int h, Tour tour) {
         JButton button = new JButton("Buy");
@@ -135,23 +198,17 @@ public class TicketPanel2 extends Panel {
                 if (amount > 0) {
                     int result = JOptionPane.showConfirmDialog(null,"Tour: " + tour.getName() + "\nAmount: " + amount + "\nTotal: " + (tour.getPrice()*amount), "Confirmation", JOptionPane.YES_NO_OPTION);
                     if (result == JOptionPane.YES_OPTION) {
-                        // Agrega aquí el código que quieras ejecutar si el usuario selecciona "Yes"
                         try {
-                            // Crea un archivo PDF con el nombre del tour y la cantidad
-                            String fileName = tour.getName() + "_" + amount + ".pdf";
-                            Document document = new Document();
-                            PdfWriter.getInstance(document, new FileOutputStream(fileName));
-                            document.open();
+                            // Verificar si el documento está abierto
+                            if (document == null || !document.isOpen()) {
+                                createPdf();
+                            }
 
-                            // Agrega el contenido del PDF
-                            Paragraph paragraph = new Paragraph("Tour: " + tour.getName() + "\nAmount: " + amount + "\nTotal: " + (tour.getPrice()*amount));
-                            document.add(paragraph);
+                            addTourToPdf(tour, amount);
 
-                            // Cierra el documento
-                            document.close();
-                            System.out.println("PDF creado exitosamente");
+                            // No cerrar el PDF después de agregar el tour para permitir agregar más tours más adelante
                         } catch (Exception ex) {
-                            System.out.println("Error al crear el PDF: " + ex.getMessage());
+                            System.out.println("Error al agregar el tour al PDF: " + ex.getMessage());
                         }
                     }
                 }
@@ -160,6 +217,7 @@ public class TicketPanel2 extends Panel {
 
         return button;
     }
+
 
     private int getSelectedAmount() {
         String[] options = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
