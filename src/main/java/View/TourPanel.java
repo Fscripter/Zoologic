@@ -23,7 +23,6 @@ public class TourPanel extends Panel {
         h1.setFont(font.deriveFont(size));
         this.getPanel().add(h1);
 
-
         this.addTourButton();
 
         this.addTourPanels(this.getPanel());

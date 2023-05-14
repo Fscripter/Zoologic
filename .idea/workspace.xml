@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5337f04b-346c-438f-9b85-03745d9abd1d" name="Changes" comment="Finished the dynamic display of the tours">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GestionAnimal2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GestionAnimal2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/AddTourWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/AddTourWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/AnimalsPanel2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/AnimalsPanel2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/TourPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/TourPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +155,11 @@
       <workItem from="1682807781393" duration="6329000" />
       <workItem from="1683077300010" duration="1180000" />
       <workItem from="1683376588533" duration="3898000" />
-      <workItem from="1683384439429" duration="5733000" />
+      <workItem from="1683384439429" duration="5952000" />
+      <workItem from="1683587735660" duration="59000" />
+      <workItem from="1683590397121" duration="35000" />
+      <workItem from="1684018863385" duration="2335000" />
+      <workItem from="1684074293124" duration="385000" />
     </task>
     <task id="LOCAL-00001" summary="Finished the dynamic display of the tours">
       <created>1681678416808</created>
