@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cdda7c2-8523-4b8f-8f03-2a4a6e517621" name="Changes" comment="">
+    <list default="true" id="5337f04b-346c-438f-9b85-03745d9abd1d" name="Changes" comment="Finished the dynamic display of the tours">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/TicketPanel2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/TicketPanel2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +123,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6cdda7c2-8523-4b8f-8f03-2a4a6e517621" name="Changes" comment="" />
+      <changelist id="5337f04b-346c-438f-9b85-03745d9abd1d" name="Changes" comment="Finished the dynamic display of the tours" />
       <created>1679482617755</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -157,6 +156,7 @@
       <workItem from="1683376588533" duration="3898000" />
       <workItem from="1683384439429" duration="5733000" />
       <workItem from="1684024038033" duration="10275000" />
+      <workItem from="1684255656121" duration="31000" />
     </task>
     <task id="LOCAL-00001" summary="Finished the dynamic display of the tours">
       <created>1681678416808</created>
