@@ -8,23 +8,35 @@ import org.example.Main;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.FileOutputStream;
+import java.io.File;
+import com.itextpdf.text.pdf.PdfPTable;
+
+
+
 
 public class TicketPanel2 extends Panel {
+
+    private PdfWriter writer;
+    private Document document;
 
     public TicketPanel2() {
         super("Tickets", "src/main/resources/Panel/Icons/004-ticket.png");
         JLabel h1 = new JLabel("Buy Tickets for tours");
         h1.setBounds(250, -60, 800, 200);
-        Font font = h1.getFont();
+        java.awt.Font font = h1.getFont();
         float size = font.getSize() + 11f;
         h1.setFont(font.deriveFont(size));
         this.getPanel().add(h1);
 
 
-        //this.addTourButton();
+        this.addClosePDFButton();
 
         this.addTourPanels(this.getPanel());
         //this.createGrid();
@@ -99,7 +111,7 @@ public class TicketPanel2 extends Panel {
         textArea.setBackground(Color.darkGray);
         textArea.setForeground(Color.white);
 
-        Font font = textArea.getFont();
+        java.awt.Font font = textArea.getFont();
         float size = font.getSize() + fontSize;
         textArea.setFont(font.deriveFont(size));
 
@@ -111,11 +123,65 @@ public class TicketPanel2 extends Panel {
         label.setName(text);
         label.setBounds(x, y, w, h);
         label.setForeground(Color.white);
-        Font font = label.getFont();
+        java.awt.Font font = label.getFont();
         float size = font.getSize() + fontSize;
         label.setFont(font.deriveFont(size));
 
         return label;
+    }
+    private void createPdf() throws Exception {
+        File file = new File("Tickets.pdf");
+        if (document != null && document.isOpen()) {
+            // El archivo ya está abierto, no es necesario crear uno nuevo
+            return;
+        }
+        if (file.exists() && !file.isDirectory()) {
+            // El archivo ya existe, abrir en modo de escritura normal
+            writer = PdfWriter.getInstance(document, new FileOutputStream(file, true)); // usar modo de apendizaje
+            document.open();
+        } else {
+            // El archivo no existe, crear un nuevo documento
+            document = new Document();
+            writer = PdfWriter.getInstance(document, new FileOutputStream(file));
+            document.open();
+        }
+    }
+    private void closePdf() throws DocumentException {
+        if (document != null && document.isOpen()) {
+            document.close();
+            writer.close(); // cerrar writer
+            System.out.println("PDF cerrado correctamente.");
+        }
+    }
+    private void addClosePDFButton() {
+        JButton addPDFClose = new JButton("Close PDF");
+        addPDFClose.setBorder(null);
+        addPDFClose.setBackground(null);
+        addPDFClose.setBounds(350, 400, 100,50);
+
+        addPDFClose.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    closePdf(); // Llamada al método closePdf()
+                } catch (DocumentException ex) {
+                    System.out.println("Error al cerrar el PDF: " + ex.getMessage());
+                }
+            }
+        });
+
+        this.getPanel().add(addPDFClose);
+    }
+
+
+    private void addTourToPdf(Tour tour, int amount) throws Exception {
+        if (document == null || !document.isOpen()) {
+            // El objeto Document no está creado o no está abierto, crear uno nuevo
+            createPdf();
+        }
+        Paragraph paragraph = new Paragraph("Tour: " + tour.getName() + "\nAmount: " + amount + "\nTotal: " + (tour.getPrice()*amount) + "\n\n");
+        document.add(paragraph);
+        System.out.println("Tour agregado al PDF exitosamente");
     }
 
     private JButton createBuyButton(int x, int y, int w, int h, Tour tour) {
@@ -125,16 +191,42 @@ public class TicketPanel2 extends Panel {
         button.setBounds(x, y, w, h);
         button.setForeground(Color.white);
 
-        /*button.addActionListener(new ActionListener() {
+        button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                GestionTour.deleteTour(tour);
-                Main.window.window.setVisible(false);
-                Main.window = new mainWindow();
+                int amount = getSelectedAmount();
+                if (amount > 0) {
+                    int result = JOptionPane.showConfirmDialog(null,"Tour: " + tour.getName() + "\nAmount: " + amount + "\nTotal: " + (tour.getPrice()*amount), "Confirmation", JOptionPane.YES_NO_OPTION);
+                    if (result == JOptionPane.YES_OPTION) {
+                        try {
+                            // Verificar si el documento está abierto
+                            if (document == null || !document.isOpen()) {
+                                createPdf();
+                            }
+
+                            addTourToPdf(tour, amount);
+
+                            // No cerrar el PDF después de agregar el tour para permitir agregar más tours más adelante
+                        } catch (Exception ex) {
+                            System.out.println("Error al agregar el tour al PDF: " + ex.getMessage());
+                        }
+                    }
+                }
             }
-        });*/
+        });
 
         return button;
+    }
+
+
+    private int getSelectedAmount() {
+        String[] options = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+        String selectedOption = (String) JOptionPane.showInputDialog(null, "Select an amount", "Amount", JOptionPane.DEFAULT_OPTION, null, options, "1");
+        int amount = -1;
+        if (selectedOption != null) {
+            amount = Integer.parseInt(selectedOption);
+        }
+        return amount;
     }
 
 }
