@@ -33,7 +33,7 @@ public class Dashboard implements MouseListener {
     }
     private void createOptions(){
         options.add(new AnimalsPanel2());
-        options.add(new EmployeesPanel());
+        //options.add(new EmployeesPanel());
         options.add(new TicketPanel2());
         options.add(new TourPanel());
         options.add(new AdoptionPanel());
