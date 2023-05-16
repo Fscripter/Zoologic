@@ -6,25 +6,30 @@ import java.awt.*;
 public class mainWindow {
     public JFrame window;
     Dashboard menu;
-    public mainWindow(){
+
+    public mainWindow() {
         createWindow();
         this.createMenu();
         window.setVisible(true);
         menu.changePanel(this);
+        window.setResizable(false);
     }
-    private void createMenu(){
+
+    private void createMenu() {
         menu = new Dashboard();
         window.add(menu.getDashboard());
     }
-    private void createWindow(){
+
+    private void createWindow() {
         window = new JFrame();
         window.setBackground(Color.black);
-        window.setSize(1000,500);
+        window.setSize(1000, 500);
         window.setLocationRelativeTo(null);
         window.setLayout(null);
         window.setTitle("Zoologic");
     }
-    public void addElement(JPanel component){
+
+    public void addElement(JPanel component) {
         window.add(component);
         window.repaint();
     }
