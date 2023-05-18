@@ -12,7 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class TourPanel extends Panel implements IPanel {
+public class TourPanel extends Panel{
 
     public TourPanel() {
         super("Tours", "src/main/resources/Panel/Icons/001-tourists.png");

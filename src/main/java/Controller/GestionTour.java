@@ -1,12 +1,13 @@
 package Controller;
 
+import DAO.TourDAO;
 import Model.Animal;
 import Model.Animal2;
 import Model.Tour;
 
 import java.util.ArrayList;
 
-public class GestionTour {
+public class GestionTour implements TourDAO {
     private static ArrayList<Tour> tourArrayList = new ArrayList<>();
 
     //Create Method ----------------------------------------------------------------------------------------

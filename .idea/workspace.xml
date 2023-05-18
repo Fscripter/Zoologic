@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5337f04b-346c-438f-9b85-03745d9abd1d" name="Changes" comment="Finished the dynamic display of the tours">
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/TourDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GestionAdopt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GestionAnimal2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GestionAnimal2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GestionTour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GestionTour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/AnimalsPanel2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/AnimalsPanel2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/TourPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/TourPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +82,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\emanu\IdeaProjects\Zoologic\src\main\java" />
+      <recent name="C:\Users\emanu\IdeaProjects\Zoologic\DAO" />
       <recent name="D:\Zoologic\src\main\resources\Panel" />
     </key>
   </component>
@@ -157,7 +165,8 @@
       <workItem from="1683384439429" duration="5733000" />
       <workItem from="1684024038033" duration="10275000" />
       <workItem from="1684255656121" duration="31000" />
-      <workItem from="1684264532098" duration="367000" />
+      <workItem from="1684264532098" duration="796000" />
+      <workItem from="1684423131869" duration="938000" />
     </task>
     <task id="LOCAL-00001" summary="Finished the dynamic display of the tours">
       <created>1681678416808</created>

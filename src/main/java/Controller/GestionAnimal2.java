@@ -1,10 +1,11 @@
 package Controller;
 
 import Model.Animal2;
+import DAO.AnimalDAO;
 
 import java.util.ArrayList;
 
-public class GestionAnimal2 {
+public class GestionAnimal2 implements AnimalDAO {
 
     private static ArrayList<Animal2> animalArrayList = new ArrayList<>();
 

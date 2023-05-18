@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class AnimalsPanel2 extends Panel implements IPanel {
+public class AnimalsPanel2 extends Panel {
 
     private JTextField animalName;
     private JTextField animalWeight;
